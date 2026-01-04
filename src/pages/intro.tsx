@@ -50,33 +50,35 @@ export default function Intro() {
 
       <div className="about-me-section">
         <Container style={{ paddingTop: 40 }}>
-          <div className="section-title">About Me</div>
-          <DefaultDiv style={{ paddingTop: 40 }}>
-            💻 I am a software engineer with 6+ years of industry experience and
-            a proven track record of delivering data-driven features that
-            contribute to company growth.
-          </DefaultDiv>
-          <DefaultDiv>
-            🦾 My current focus is on iOS development, and I also have expertise
-            in backend programming using Python and PHP to handle end-to-end
-            requirements as needed. Much of my work has guided by analyzing user
-            behavior and optimizing features to inform strategic product
-            decisions.
-          </DefaultDiv>
-          <DefaultDiv>
-            👩🏼‍💻 To deepen my expertise and apply these skills effectively, I am
-            currently pursuing a Master of Data Science at the University of
-            British Columbia.
-          </DefaultDiv>
-          <DefaultDiv>
-            💡 I thrive on solving complex challenges and am dedicated to
-            incorporating AI technologies into mobile ecosystems to create more
-            intelligent, user-centric applications.
-          </DefaultDiv>
-          <DefaultDiv>
-            🛠 This website was developed from scratch using React, TypeScript,
-            and GitHub Pages.
-          </DefaultDiv>
+          <div className="section-content-wrapper">
+            <div className="section-title">About Me</div>
+            <DefaultDiv style={{ paddingTop: 40 }}>
+              💻 I am a software engineer with 6+ years of industry experience
+              and a proven track record of delivering data-driven features that
+              contribute to company growth.
+            </DefaultDiv>
+            <DefaultDiv>
+              🦾 My current focus is on iOS development, and I also have
+              expertise in backend programming using Python and PHP to handle
+              end-to-end requirements as needed. Much of my work has guided by
+              analyzing user behavior and optimizing features to inform
+              strategic product decisions.
+            </DefaultDiv>
+            <DefaultDiv>
+              👩🏼‍💻 To deepen my expertise and apply these skills effectively, I am
+              currently pursuing a Master of Data Science at the University of
+              British Columbia.
+            </DefaultDiv>
+            <DefaultDiv>
+              💡 I thrive on solving complex challenges and am dedicated to
+              incorporating AI technologies into mobile ecosystems to create
+              more intelligent, user-centric applications.
+            </DefaultDiv>
+            <DefaultDiv>
+              🛠 This website was developed from scratch using React, TypeScript,
+              and GitHub Pages.
+            </DefaultDiv>
+          </div>
         </Container>
       </div>
 
