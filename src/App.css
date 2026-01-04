@@ -127,9 +127,12 @@
 }
 
 .app-link-wrapper {
-  display: flex;
-  justify-content: center;
   padding-top: 20px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-link-button {
@@ -148,7 +151,7 @@
   box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
 }
 
-.work-sample-section {
+.personal-sample-section {
   display: block;
   width: 100vw;
   padding-top: 50px;
@@ -214,4 +217,46 @@
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   border-radius: 8px;
   border: none;
+}
+
+.work-sample-section {
+  display: block;
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background: white;
+}
+
+.autocapture-gallery {
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.education-section {
+  display: block;
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background: var(--work-background-color);
+}
+
+.education-wrapper {
+  padding-top: 20px;
+  gap: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.education-year {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.education-content {
+  padding-top: 5px;
+  font-size: 18px;
 }

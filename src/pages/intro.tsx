@@ -8,6 +8,20 @@ import {
   scanningBooks,
   shareBook,
 } from '../images/scantodoc';
+import {
+  carsOnWeb,
+  carCapture,
+  cutAppCars,
+  multipleCapture,
+  rotatingCar,
+} from '../images/autocapture';
+import { sticpay1, sticpay2, sticpay3, sticpay4 } from '../images/sticpay';
+import {
+  supervank1,
+  supervank2,
+  supervank3,
+  supervank4,
+} from '../images/supervank';
 
 export default function Intro() {
   return (
@@ -33,6 +47,7 @@ export default function Intro() {
           </div>
         </Container>
       </div>
+
       <div className="about-me-section">
         <Container style={{ paddingTop: 40 }}>
           <div className="section-title">About Me</div>
@@ -64,7 +79,8 @@ export default function Intro() {
           </DefaultDiv>
         </Container>
       </div>
-      <div className="work-sample-section">
+
+      <div className="personal-sample-section">
         <Container style={{ paddingTop: 40 }}>
           <div className="section-title">Personal Projects</div>
 
@@ -188,6 +204,241 @@ export default function Intro() {
             </div>
           </div>
         </Container>
+
+        <div className="work-sample-section">
+          <Container style={{ paddingTop: 40 }}>
+            <div className="section-title">Work experience</div>
+            <div className="section-content-wrapper">
+              <div className="section-semi-title">
+                AutoCapture(iOS) / AutoCompose(Mac)
+              </div>
+              <div className="section-semi-explanation">
+                Enterprise Car-Capture & 360° View Generation System
+              </div>
+              <div className="section-tech-explanation">
+                Technologies: OpenCV, Canon SDK, Bluetooth, GCD web server,
+                Firebase MLKit
+              </div>
+              <div className="section-app-description">
+                - Executed a full-scale legacy migration from Objective-C to
+                Swift, leveraging SwiftRewriter to enhance codebase
+                maintainability and performance.
+              </div>
+              <div className="section-app-description">
+                - Implemented Computer Vision algorithms to detect and segment
+                vehicles, automating the creation of seamless 360° interactive
+                views.
+              </div>
+              <div className="section-app-description">
+                - Orchestrated complex hardware integrations with the Canon SDK
+                via Bluetooth, utilizing Apple’s Combine (zip, flatMap, retry)
+                to handle multiple concurrent asynchronous events.
+              </div>
+              <div className="section-app-description">
+                - Refactored networking infrastructure from AFNetworking to
+                native URLSession, significantly improving system robustness and
+                reducing external dependencies.
+              </div>
+              <div className="autocapture-gallery">
+                <div>
+                  <img
+                    src={multipleCapture}
+                    style={{ width: 250, height: 125 }}
+                  />
+                </div>
+                <p>→</p>
+                <div>
+                  <img src={carCapture} style={{ width: 250, height: 125 }} />
+                </div>
+              </div>
+              <div className="autocapture-gallery">
+                <div>
+                  <img src={cutAppCars} style={{ width: 200, height: 100 }} />
+                </div>
+                <p>→</p>
+                <div>
+                  <img src={carsOnWeb} style={{ width: 250, height: 150 }} />
+                </div>
+                <p>→</p>
+                <div>
+                  <img src={rotatingCar} style={{ width: 200, height: 100 }} />
+                </div>
+              </div>
+              <div className="app-link-wrapper">
+                <a
+                  href="https://apps.apple.com/gb/app/aos-autocapture/id1115610872"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="app-link-button">iOS</button>
+                </a>
+                <a
+                  href="https://download.aos.tv/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="app-link-button">macOS</button>
+                </a>
+              </div>
+            </div>
+
+            <div className="section-content-wrapper">
+              <div className="section-semi-title">Sticpay iOS Application</div>
+              <div className="section-semi-explanation">
+                Payment and money transfer application
+              </div>
+              <div className="section-tech-explanation">
+                Technologies: Swift, MVVM, SnapKit, RxSwift, Alamofire,
+                Firebase, SwiftLint
+              </div>
+              <div className="section-app-description">
+                - Native Migration: Spearheaded the migration of the Sticpay
+                application from React Native to a fully native iOS environment
+                to enhance performance and user experience.
+              </div>
+              <div className="section-app-description">
+                - Core Fintech Features: Developed mission-critical features:
+                multi-currency wallet management, real-time currency exchange,
+                and secure payment processing.
+              </div>
+              <div className="section-app-description">
+                - Regional Optimization: Configured multi-target build schemes
+                to efficiently manage and distribute Global and China-specific
+                versions from a single codebase.
+              </div>
+              <div className="section-app-description">
+                - Full Lifecycle Ownership: Owned the entire development
+                lifecycle, from initial architecture design and implementation
+                to App Store distribution and maintenance.
+              </div>
+
+              <div className="section-semi-title">
+                Sticpay React-Native Application
+              </div>
+              <div className="section-tech-explanation">
+                Technologies: JavaScript (ES6), Redux, Flow, Axios, Jest,
+                ESLint/Prettier
+              </div>
+              <div className="section-app-description">
+                - Architectural Transition: Collaborated on transitioning a
+                legacy web-view-based application to React Native, significantly
+                improving app responsiveness and fluidity.
+              </div>
+              <div className="section-app-description">
+                - State & Async Management: Engineered complex state management
+                and asynchronous data flows using Redux and modern JavaScript
+                (ES6+) patterns.
+              </div>
+              <div className="section-app-description">
+                - Native Bridge Development: Developed custom Native Modules in
+                Java (Android) and Objective-C (iOS) to bridge platform-specific
+                functionalities into the React Native
+              </div>
+              <div className="section-app-description">
+                - Stability Optimization: Maintained high application stability,
+                keeping the crash-free rate above 99.7% through proactive
+                monitoring and debugging via Firebase Crashlytics.
+              </div>
+
+              <div className="scantodoc-gallery">
+                <div>
+                  <img src={sticpay1} style={{ width: 150, height: 300 }} />
+                </div>
+                <div>
+                  <img src={sticpay2} style={{ width: 150, height: 300 }} />
+                </div>
+                <div>
+                  <img src={sticpay3} style={{ width: 150, height: 300 }} />
+                </div>
+                <div>
+                  <img src={sticpay4} style={{ width: 150, height: 300 }} />
+                </div>
+              </div>
+              <div className="app-link-wrapper">
+                <a
+                  href="https://apps.apple.com/gb/app/sticpay/id1274956968"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="app-link-button">iOS</button>
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.sticpay.app.sticpay"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="app-link-button">Android</button>
+                </a>
+              </div>
+            </div>
+
+            <div className="section-content-wrapper">
+              <div className="section-semi-title">
+                Supervank Android application
+              </div>
+              <div className="section-semi-explanation">
+                Stock market-linked reward platform with investment simulation
+              </div>
+              <div className="section-tech-explanation">
+                Technologies: Java, MVC, Ad SDK (Meta, Unity, Google), Camera
+                API, Glide, ContentProvider
+              </div>
+              <div className="section-app-description">
+                - Pedometer Engineering: Developed an activity tracking system
+                using gyro sensors to provide detailed fitness analytics (steps,
+                distance, and calories).
+              </div>
+              <div className="section-app-description">
+                - Investment Simulation: Created intuitive UI/UX for users to
+                track investment outcomes based on real-world stock market data.
+              </div>
+              <div className="section-app-description">
+                - Optimized Media Handling: Engineered custom-built Camera and
+                Gallery modules to improve user experience beyond standard
+                system components.
+              </div>
+              <div className="section-app-description" style={{ color: 'red' }}>
+                - Due to the company's policy, this app is currently down from
+                the play store
+              </div>
+
+              <div className="scantodoc-gallery">
+                <div>
+                  <img src={supervank1} style={{ width: 150, height: 300 }} />
+                </div>
+                <div>
+                  <img src={supervank2} style={{ width: 150, height: 300 }} />
+                </div>
+                <div>
+                  <img src={supervank3} style={{ width: 150, height: 300 }} />
+                </div>
+                <div>
+                  <img src={supervank4} style={{ width: 200, height: 300 }} />
+                </div>
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        <div className="education-section">
+          <Container style={{ paddingTop: 40 }}>
+            <div className="section-title">Education</div>
+            <div className="section-content-wrapper">
+              <div className="education-wrapper">
+                <div className="education-year">2025 - 2026</div>
+                <div>
+                  <div className="education-content">
+                    Master of Data Science, University of British Columbia,
+                    Vancouver, Canada
+                  </div>
+                  <div className="education-content" style={{ paddingTop: 5 }}>
+                    GPA: 3.86/4.0
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </div>
       </div>
     </>
   );
