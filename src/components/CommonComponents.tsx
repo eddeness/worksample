@@ -1,67 +1,105 @@
 import styled from 'styled-components';
 
+// Color constants for consistency
+const COLORS = {
+  white: '#ffffff',
+  black: '#000000',
+  gray: {
+    dark: '#333',
+    medium: '#3e424b',
+    cadet: '#5f9ea0',
+    slate: '#708090',
+    dim: '#544c4a',
+  },
+} as const;
+
+// Main container with responsive padding
 export const Container = styled.div`
-  padding-top: 70px;
-  padding-left: 250px;
-  padding-right: 250px;
-  padding-bottom: 100px;
+  padding: 4.375rem 15.625rem 6.25rem;
+
+  @media (max-width: 1400px) {
+    padding: 4.375rem 8rem 6.25rem;
+  }
+
+  @media (max-width: 992px) {
+    padding: 4.375rem 4rem 6.25rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem 4rem;
+  }
 `;
 
+// Menu components
 export const Menu = styled.div`
-  height: calc(100vh);
+  height: 100vh;
   position: sticky;
-  align-content: center;
+  display: flex;
+  align-items: center;
+  width: 15.625rem;
+  background-color: ${COLORS.gray.dark};
+  color: ${COLORS.white};
+  padding: 1.25rem;
 
-  // top: 50px;
-  width: 250px; /* Adjust the width as needed */
-  background-color: #333; /* Sidebar background color */
-  color: #fff; /* Text color */
-  padding: 20px;
+  @media (max-width: 992px) {
+    display: none;
+  }
 `;
 
 export const MenuTitle = styled.div`
-  font-size: larger;
-`;
-
-export const BigTitle = styled.div`
-  font-size: 40px;
-  color: #5f9ea0;
-  font-weight: bold;
-`;
-
-export const DefaultDiv = styled.div`
-  font-size: 20px;
-  color: #000000;
-  padding-top: 30px;
-  line-height: 120%;
-`;
-
-export const SemiTitle = styled.div`
-  font-size: 25px;
-  color: #708090;
-  font-weight: bold;
-  padding-top: 30px;
-  padding-bottom: 10px;
-`;
-
-export const NumberTitle = styled.div`
-  font-size: 22px;
-  color: #544c4a;
-  font-weight: 600;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  font-size: 1.125rem;
+  font-weight: 500;
 `;
 
 export const MenuDiv = styled.div`
-  font-size: 18px;
-  color: #3e424b;
-  padding-left: 20px;
-  padding-top: 10px;
-  line-height: 150%;
+  font-size: 1.125rem;
+  color: ${COLORS.gray.medium};
+  padding-left: 1.25rem;
+  padding-top: 0.625rem;
+  line-height: 1.5;
 `;
 
-export const CardContent = styled.div`
-  font-size: 14px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+// Typography components
+export const BigTitle = styled.h1`
+  font-size: 2.5rem;
+  color: ${COLORS.gray.cadet};
+  font-weight: bold;
+  margin: 0;
 `;
+
+export const SemiTitle = styled.h2`
+  font-size: 1.5625rem;
+  color: ${COLORS.gray.slate};
+  font-weight: bold;
+  padding: 1.875rem 0 0.625rem;
+  margin: 0;
+`;
+
+export const NumberTitle = styled.h3`
+  font-size: 1.375rem;
+  color: ${COLORS.gray.dim};
+  font-weight: 600;
+  padding: 0.9375rem 0;
+  margin: 0;
+`;
+
+export const DefaultDiv = styled.div`
+  font-size: 1.25rem;
+  color: ${COLORS.black};
+  padding-top: 1.875rem;
+  line-height: 1.2;
+`;
+
+// Card components
+export const CardContent = styled.p`
+  font-size: 0.875rem;
+  padding: 0.625rem 0;
+  margin: 0;
+  line-height: 1.5;
+`;
+
+// Utility type for styled component props
+export type StyledComponentProps = {
+  className?: string;
+  children?: React.ReactNode;
+};
