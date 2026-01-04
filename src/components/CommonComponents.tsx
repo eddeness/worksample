@@ -59,3 +59,9 @@ export const MenuDiv = styled.div`
   padding-top: 10px;
   line-height: 150%;
 `;
+
+export const CardContent = styled.div`
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`;
