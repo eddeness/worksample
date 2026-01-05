@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/worksample/static/css/main.1400c900.css",
-    "main.js": "/worksample/static/js/main.9ed6c32f.js",
+    "main.js": "/worksample/static/js/main.6150041c.js",
     "@atlaskit-internal_refractor-import.js": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js",
     "static/js/453.b3a8b54a.chunk.js": "/worksample/static/js/453.b3a8b54a.chunk.js",
     "static/media/carsOnWeb.jpg": "/worksample/static/media/carsOnWeb.8919377c8f9debe62560.jpg",
@@ -10,12 +10,12 @@
     "static/media/wordCloudUni.png": "/worksample/static/media/wordCloudUni.99b438f3d2b26022da40.png",
     "static/media/bikeUsage.png": "/worksample/static/media/bikeUsage.9bfbe4a350a31107f93c.png",
     "static/media/cutAppCars.jpg": "/worksample/static/media/cutAppCars.e3bf0adf32307abbc5a8.jpg",
-    "static/media/transfer2.gif": "/worksample/static/media/transfer2.7ad18f0e9c3b2f40f8c0.gif",
     "static/media/probBikes.png": "/worksample/static/media/probBikes.e83f80c8e9b8e0c81ab1.png",
     "static/media/franchiseMap.gif": "/worksample/static/media/franchiseMap.16cc0af3a14230f6d178.gif",
     "static/media/factorsToCount.png": "/worksample/static/media/factorsToCount.e3df6747e6899a0f550a.png",
     "static/media/unigram.png": "/worksample/static/media/unigram.c05da279e572a7466067.png",
     "static/media/carCapture.jpg": "/worksample/static/media/carCapture.1e5a3cfb279737eec024.jpg",
+    "static/media/transfer2.gif": "/worksample/static/media/transfer2.90702a343bbb37cdf64d.gif",
     "static/media/workingHour.png": "/worksample/static/media/workingHour.9454cdfe656b53e32701.png",
     "static/media/adjustedWind.png": "/worksample/static/media/adjustedWind.4f7f88904df591be2c5c.png",
     "static/media/sentimentAnalysis.png": "/worksample/static/media/sentimentAnalysis.f2c84bedbfcabad83eb4.png",
@@ -60,12 +60,12 @@
     "static/media/scanToDoc1.jpg": "/worksample/static/media/scanToDoc1.bd97549de74f87d76fa1.jpg",
     "index.html": "/worksample/index.html",
     "main.1400c900.css.map": "/worksample/static/css/main.1400c900.css.map",
-    "main.9ed6c32f.js.map": "/worksample/static/js/main.9ed6c32f.js.map",
+    "main.6150041c.js.map": "/worksample/static/js/main.6150041c.js.map",
     "@atlaskit-internal_refractor-import.8321ec81.chunk.js.map": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js.map",
     "453.b3a8b54a.chunk.js.map": "/worksample/static/js/453.b3a8b54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1400c900.css",
-    "static/js/main.9ed6c32f.js"
+    "static/js/main.6150041c.js"
   ]
 }
