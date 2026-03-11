@@ -152,96 +152,12 @@ const Intro: React.FC = () => {
               more intelligent, user-centric applications.
             </p>
             <p>
-              🛠 This website was developed from scratch using React, TypeScript,
-              and GitHub Pages.
+              🛠 This website was developed from scratch using React,
+              TypeScript, and GitHub Pages.
             </p>
           </SectionContentWrapper>
         </Container>
       </AboutMeSection>
-
-      <PersonalProjectsSection>
-        <Container>
-          <SectionTitle>Personal Projects</SectionTitle>
-
-          <SectionContentWrapper>
-            <SectionSemiTitle>Scan To Doc</SectionSemiTitle>
-            <SectionExplanation>
-              Intelligent Document Digitization App
-            </SectionExplanation>
-            <TechStack>
-              Technologies: OpenCV (C++), Objective-C/C++, RxSwift, SnapKit,
-              PencilKit
-            </TechStack>
-            <AppDescription>
-              - Engineered core image processing features using OpenCV (C++) to
-              implement real-time sharpening and brightness optimization.
-            </AppDescription>
-            <AppDescription>
-              - Implemented Vision-based document recognition to automate
-              precise boundary detection and perspective correction.
-            </AppDescription>
-            <AppDescription>
-              - Architected a robust document management system using
-              directory-based file structures and PencilKit integration.
-            </AppDescription>
-            <AppDescription>
-              - Developed data sharing workflows using Share Extensions and App
-              Groups for cross-platform utility.
-            </AppDescription>
-
-            <ImageGallery>
-              <ProjectImage
-                src={scanToDoc1}
-                width={150}
-                height={300}
-                alt="Scan To Doc screenshot 1"
-              />
-              <ProjectImage
-                src={scanToDoc2}
-                width={150}
-                height={300}
-                alt="Scan To Doc screenshot 2"
-              />
-              <ProjectImage
-                src={scanningBooks}
-                width={150}
-                height={300}
-                alt="Scanning books"
-              />
-              <ProjectImage
-                src={shareBook}
-                width={200}
-                height={300}
-                alt="Share book"
-              />
-            </ImageGallery>
-
-            <AppLinks ios="https://apps.apple.com/gb/app/scan-to-doc/id1542458261" />
-          </SectionContentWrapper>
-
-          <SectionContentWrapper>
-            <SectionSemiTitle>CoreML & iOS</SectionSemiTitle>
-            <ProjectGrid>
-              <ProjectCardComponent
-                title="Data Preparation & transfer learning"
-                image={transfer1}
-                imageWidth={320}
-                imageHeight={150}
-                description="End-to-end pipeline for custom data collection, annotation, and training optimized YOLO models for mobile via transfer learning."
-                link="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571"
-              />
-              <ProjectCardComponent
-                title="Embedding a model into an iOS app"
-                image={transfer2}
-                imageWidth={100}
-                imageHeight={145}
-                description="Edge AI: Real-time Document - Detection Deploying Custom Transfer Learning Models via CoreML for On-device Inference."
-                link="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-coreml-%EB%AA%A8%EB%8D%B8-%EB%84%A3%EA%B3%A0-%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A1%9C-%EC%9D%B8%EC%8B%9D%EC%8B%9C%ED%82%A4%EA%B8%B0-890ac737b476"
-              />
-            </ProjectGrid>
-          </SectionContentWrapper>
-        </Container>
-      </PersonalProjectsSection>
 
       <WorkExperienceSection>
         <Container>
@@ -472,6 +388,90 @@ const Intro: React.FC = () => {
           </SectionContentWrapper>
         </Container>
       </WorkExperienceSection>
+
+      <PersonalProjectsSection>
+        <Container>
+          <SectionTitle>Personal Projects</SectionTitle>
+
+          <SectionContentWrapper>
+            <SectionSemiTitle>Scan To Doc</SectionSemiTitle>
+            <SectionExplanation>
+              Intelligent Document Digitization App
+            </SectionExplanation>
+            <TechStack>
+              Technologies: OpenCV (C++), Objective-C/C++, RxSwift, SnapKit,
+              PencilKit
+            </TechStack>
+            <AppDescription>
+              - Engineered core image processing features using OpenCV (C++) to
+              implement real-time sharpening and brightness optimization.
+            </AppDescription>
+            <AppDescription>
+              - Implemented Vision-based document recognition to automate
+              precise boundary detection and perspective correction.
+            </AppDescription>
+            <AppDescription>
+              - Architected a robust document management system using
+              directory-based file structures and PencilKit integration.
+            </AppDescription>
+            <AppDescription>
+              - Developed data sharing workflows using Share Extensions and App
+              Groups for cross-platform utility.
+            </AppDescription>
+
+            <ImageGallery>
+              <ProjectImage
+                src={scanToDoc1}
+                width={150}
+                height={300}
+                alt="Scan To Doc screenshot 1"
+              />
+              <ProjectImage
+                src={scanToDoc2}
+                width={150}
+                height={300}
+                alt="Scan To Doc screenshot 2"
+              />
+              <ProjectImage
+                src={scanningBooks}
+                width={150}
+                height={300}
+                alt="Scanning books"
+              />
+              <ProjectImage
+                src={shareBook}
+                width={200}
+                height={300}
+                alt="Share book"
+              />
+            </ImageGallery>
+
+            <AppLinks ios="https://apps.apple.com/gb/app/scan-to-doc/id1542458261" />
+          </SectionContentWrapper>
+
+          <SectionContentWrapper>
+            <SectionSemiTitle>CoreML & iOS</SectionSemiTitle>
+            <ProjectGrid>
+              <ProjectCardComponent
+                title="Data Preparation & transfer learning"
+                image={transfer1}
+                imageWidth={320}
+                imageHeight={150}
+                description="End-to-end pipeline for custom data collection, annotation, and training optimized YOLO models for mobile via transfer learning."
+                link="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571"
+              />
+              <ProjectCardComponent
+                title="Embedding a model into an iOS app"
+                image={transfer2}
+                imageWidth={100}
+                imageHeight={145}
+                description="Edge AI: Real-time Document - Detection Deploying Custom Transfer Learning Models via CoreML for On-device Inference."
+                link="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-coreml-%EB%AA%A8%EB%8D%B8-%EB%84%A3%EA%B3%A0-%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A1%9C-%EC%9D%B8%EC%8B%9D%EC%8B%9C%ED%82%A4%EA%B8%B0-890ac737b476"
+              />
+            </ProjectGrid>
+          </SectionContentWrapper>
+        </Container>
+      </PersonalProjectsSection>
 
       <EducationSection>
         <Container>

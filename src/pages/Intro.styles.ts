@@ -89,7 +89,7 @@ export const PersonalProjectsSection = styled.section`
   display: block;
   width: 100vw;
   padding: 3.125rem 0 6.25rem;
-  background: ${COLORS.workBackground};
+  background: ${COLORS.white};
 `;
 
 // Work Experience Section
@@ -97,7 +97,7 @@ export const WorkExperienceSection = styled.section`
   display: block;
   width: 100vw;
   padding: 3.125rem 0 6.25rem;
-  background: ${COLORS.white};
+  background: ${COLORS.workBackground};
 `;
 
 // Education Section
