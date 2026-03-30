@@ -1,11 +1,14 @@
 import { Route } from 'react-router-dom';
 import './App.css';
-import Survey from './pages/surveyProject';
+// import Survey from './pages/surveyProject';
+import Survey from './pages/Survey';
 import Bike from './pages/bikeProject';
 import Intro from './pages/intro';
 import ClimageChange from './pages/climageChange';
 import ECommerce from './pages/eCommerce';
 import Franchise from './pages/franchise';
+import CreditDefault from './pages/CreditDefault';
+import TransferLearning from './pages/TransferLearning';
 import styled, { createGlobalStyle } from 'styled-components';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -19,6 +22,8 @@ function App() {
       <Route exact path="/bike" component={Bike} />
       <Route exact path="/climate" component={ClimageChange} />
       <Route exact path="/ecommerce" component={ECommerce} />
+      <Route exact path="/credit" component={CreditDefault} />
+      <Route exact path="/transferlearning" component={TransferLearning} />
     </>
   );
 }
