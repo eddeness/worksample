@@ -19,195 +19,33 @@ import {
   whereData,
 } from '../images/survey';
 
-// ─────────────────────────────────────────────
-// Global styles & tokens
-// ─────────────────────────────────────────────
-const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
-
-  :root {
-    --bg:       #f8fafc;
-    --surface:  rgba(255, 255, 255, 0.85);
-    --border:   rgba(203, 213, 225, 0.8);
-    --sky:      #0284c7;
-    --indigo:   #6366f1;
-    --emerald:  #059669;
-    --text:     #0f172a;
-    --muted:    #64748b;
-    --dim:      #94a3b8;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: 'Syne', sans-serif;
-    min-height: 100vh;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 10% 20%, rgba(2,132,199,0.05) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 60% at 90% 80%, rgba(99,102,241,0.05) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.3; }
-  }
-`;
-
-// ─────────────────────────────────────────────
-// Layout
-// ─────────────────────────────────────────────
-const Page = styled.div`
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 3rem 2rem 6rem;
-
-  @media (max-width: 640px) {
-    padding: 2rem 1rem 4rem;
-  }
-`;
-
-// ─────────────────────────────────────────────
-// Header
-// ─────────────────────────────────────────────
-const SiteHeader = styled.header`
-  margin-bottom: 3.5rem;
-`;
-
-const Logotype = styled.h1`
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  background: linear-gradient(100deg, #0f172a 30%, #0284c7 70%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.75rem;
-
-  @media (max-width: 640px) {
-    font-size: 2rem;
-  }
-`;
-
-const Subtitle = styled.p`
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 640px;
-`;
-
-// ─────────────────────────────────────────────
-// Cards
-// ─────────────────────────────────────────────
-const Card = styled.div`
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  padding: 1.75rem;
-  transition:
-    border-color 0.25s,
-    transform 0.25s;
-  backdrop-filter: blur(8px);
-
-  &:hover {
-    border-color: rgba(2, 132, 199, 0.4);
-    transform: translateY(-2px);
-  }
-`;
-
-const CardLabel = styled.div`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--dim);
-  margin-bottom: 1rem;
-`;
-
-// ─────────────────────────────────────────────
-// Stats row
-// ─────────────────────────────────────────────
-const StatsRow = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-`;
-
-const StatCard = styled(Card)`
-  text-align: center;
-  padding: 1.5rem 1rem;
-`;
-
-const StatVal = styled.div`
-  font-size: 2.4rem;
-  font-weight: 800;
-  line-height: 1;
-  background: linear-gradient(90deg, var(--sky), var(--indigo));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`;
-
-const StatLabel = styled.div`
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 6px;
-  letter-spacing: 0.05em;
-`;
-
-// ─────────────────────────────────────────────
-// Section headers
-// ─────────────────────────────────────────────
-const SectionHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 3.5rem 0 1.5rem;
-`;
-
-const SectionNum = styled.span`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--sky);
-  letter-spacing: 0.1em;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-`;
-
-const SectionLine = styled.div`
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-`;
-
-// ─────────────────────────────────────────────
-// Typography
-// ─────────────────────────────────────────────
-const Prose = styled.p`
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 0.95rem;
-
-  & + & {
-    margin-top: 1rem;
-  }
-`;
+import {
+  GlobalStyle,
+  Page,
+  SiteHeader,
+  Logotype,
+  Subtitle,
+  Card,
+  CardLabel,
+  StatsRow,
+  StatCard,
+  StatVal,
+  StatLabel,
+  Section,
+  SubItem,
+  SubNum,
+  SubTitle,
+  Prose,
+  ToolsRow,
+  ToolBadge,
+  ChartWrap,
+  TwoColGrid,
+  InsightsGrid,
+  InsightCard,
+  InsightIcon,
+  InsightTitle,
+  InsightBody,
+} from '../components/CommonComponents';
 
 const DatasetLink = styled.div`
   margin-bottom: 1.25rem;
@@ -261,137 +99,6 @@ const Chip = styled.span<ChipProps>`
         return `border: 1px solid rgba(51,65,85,0.5); color: #94a3b8;`;
     }
   }}
-`;
-
-// ─────────────────────────────────────────────
-// Tools
-// ─────────────────────────────────────────────
-const ToolsRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 0.75rem;
-`;
-
-const ToolBadge = styled.span`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  padding: 6px 14px;
-  border-radius: 6px;
-  background: rgba(2, 132, 199, 0.08);
-  border: 1px solid rgba(2, 132, 199, 0.25);
-  color: var(--sky);
-  letter-spacing: 0.05em;
-`;
-
-// ─────────────────────────────────────────────
-// Sub-items (numbered)
-// ─────────────────────────────────────────────
-const SubItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 2rem 0 0.75rem;
-`;
-
-const SubNum = styled.span`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--indigo);
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  border-radius: 4px;
-  padding: 2px 8px;
-  white-space: nowrap;
-`;
-
-const SubTitle = styled.span`
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
-`;
-
-// ─────────────────────────────────────────────
-// Chart image wrapper
-// ─────────────────────────────────────────────
-const ChartWrap = styled.div`
-  margin: 1rem 0;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  border: 1px solid var(--border);
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-`;
-
-// ─────────────────────────────────────────────
-// Two-column grid for tech stack cards
-// ─────────────────────────────────────────────
-const TwoColGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-  gap: 1rem;
-
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-// ─────────────────────────────────────────────
-// Insights grid (summary)
-// ─────────────────────────────────────────────
-const InsightsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-`;
-
-const InsightCard = styled(Card)`
-  padding: 1.5rem;
-`;
-
-const InsightIcon = styled.div`
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
-`;
-
-const InsightTitle = styled.h4`
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-  color: var(--text);
-`;
-
-const InsightBody = styled.p`
-  font-size: 0.82rem;
-  color: var(--muted);
-  line-height: 1.6;
-`;
-
-// ─────────────────────────────────────────────
-// Footer
-// ─────────────────────────────────────────────
-const Footer = styled.footer`
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-`;
-
-const FooterText = styled.span`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--dim);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 `;
 
 // ─────────────────────────────────────────────
@@ -582,19 +289,6 @@ colnames(response_where_data) <- c("Government websites", "Univ research website
 
 where_data_long <- longer_data(response_where_data, "Where")
 percentage_bargraph(where_data_long, Selected, "Where do you get data from (%)", "Where")`;
-
-// ─────────────────────────────────────────────
-// Sub-components
-// ─────────────────────────────────────────────
-function Section({ num, title }: { num: string; title: string }) {
-  return (
-    <SectionHeader>
-      <SectionNum>{num}</SectionNum>
-      <SectionTitle>{title}</SectionTitle>
-      <SectionLine />
-    </SectionHeader>
-  );
-}
 
 function TechItem({
   num,

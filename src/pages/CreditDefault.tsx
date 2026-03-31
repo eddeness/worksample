@@ -130,55 +130,6 @@ const Chip = styled.span<ChipProps>`
 `;
 
 // ─────────────────────────────────────────────
-// Code block
-// ─────────────────────────────────────────────
-
-const CodeHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 1rem 0.3rem;
-  border-bottom: 1px solid var(--border);
-`;
-
-const CodeDots = styled.div`
-  display: flex;
-  gap: 5px;
-  span {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
-  .dot-r {
-    background: #ff6060;
-  }
-  .dot-y {
-    background: #f5c842;
-  }
-  .dot-g {
-    background: #34d399;
-  }
-`;
-
-const CodeLang = styled.span`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sky);
-  opacity: 0.7;
-`;
-
-const CodePre = styled.pre`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.74rem;
-  line-height: 1.75;
-  color: #334155;
-  padding: 1rem 1.25rem;
-  white-space: pre;
-`;
-
-// ─────────────────────────────────────────────
 // Dataset link
 // ─────────────────────────────────────────────
 const DatasetLink = styled.div`
@@ -262,96 +213,22 @@ const ModelOpt = styled.div`
   margin-bottom: 1rem;
 `;
 
-// ─────────────────────────────────────────────
-// SHAP
-// ─────────────────────────────────────────────
-const ShapCase = styled(Card)`
-  padding: 1.5rem;
-`;
-
-const ShapLabel = styled.span<{ $type: 'tp' | 'fp' }>`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 4px;
-  display: inline-block;
-  margin-bottom: 0.75rem;
-  ${({ $type }) =>
-    $type === 'tp'
-      ? `background: rgba(5,150,105,0.1); color: var(--emerald); border: 1px solid rgba(5,150,105,0.3);`
-      : `background: rgba(225,29,72,0.1);  color: var(--rose);    border: 1px solid rgba(225,29,72,0.3);`}
-`;
-
-const ShapFeatureBar = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 1rem;
-`;
-
-const ShapRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
-
-const ShapFeatName = styled.span`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--muted);
-  width: 140px;
-  flex-shrink: 0;
-`;
-
-const ShapBarTrack = styled.div`
-  flex: 1;
-  height: 14px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 3px;
-  overflow: hidden;
-`;
-
-const ShapBarFill = styled.div<{ $width: number; $color: string }>`
-  height: 100%;
-  border-radius: 3px;
-  width: ${({ $width }) => $width}%;
-  background: ${({ $color }) => $color};
-  transition: width 0.4s;
-`;
-
-const ShapVal = styled.span<{ $positive: boolean }>`
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  width: 55px;
-  text-align: right;
-  flex-shrink: 0;
-  color: ${({ $positive }) => ($positive ? 'var(--rose)' : 'var(--indigo)')};
-`;
-
-// ─────────────────────────────────────────────
-// Chart color palette
-// ─────────────────────────────────────────────
-const C = {
-  sky: '#0284c7',
-  indigo: '#6366f1',
-  rose: '#e11d48',
-  amber: '#d97706',
-  emerald: '#059669',
-  muted: '#94a3b8',
-};
-
 const baseOpts = {
   plugins: { legend: { display: false as const } },
   scales: {
     x: {
       grid: { color: 'rgba(148,163,184,.2)' },
-      ticks: { color: C.muted, font: { family: "'Space Mono'", size: 10 } },
+      ticks: {
+        color: ConstColor.muted,
+        font: { family: "'Space Mono'", size: 10 },
+      },
     },
     y: {
       grid: { color: 'rgba(148,163,184,.2)' },
-      ticks: { color: C.muted, font: { family: "'Space Mono'", size: 10 } },
+      ticks: {
+        color: ConstColor.muted,
+        font: { family: "'Space Mono'", size: 10 },
+      },
     },
   },
   maintainAspectRatio: false,
@@ -609,7 +486,7 @@ function ScoreBar({
   label,
   value,
   max = 1,
-  color = C.sky,
+  color = ConstColor.sky,
 }: {
   label: string;
   value: number;
@@ -993,19 +870,19 @@ export default function CreditDefault() {
                 label="CV F1-Score (mean)"
                 value={0.3703}
                 max={0.6}
-                color={C.sky}
+                color={ConstColor.sky}
               />
               <ScoreBar
                 label="Test F1-Score"
                 value={0.3574}
                 max={0.6}
-                color={C.indigo}
+                color={ConstColor.indigo}
               />
               <ScoreBar
                 label="Test ROC-AUC"
                 value={0.6053}
                 max={1.0}
-                color={C.amber}
+                color={ConstColor.amber}
               />
             </div>
             <Prose style={{ fontSize: '0.8rem', marginTop: '0.75rem' }}>
@@ -1040,7 +917,11 @@ export default function CreditDefault() {
                   {
                     label: 'Test F1',
                     data: [0.456, 0.4622, 0.4536],
-                    backgroundColor: [C.sky, C.amber, C.indigo],
+                    backgroundColor: [
+                      ConstColor.sky,
+                      ConstColor.amber,
+                      ConstColor.indigo,
+                    ],
                     borderRadius: 4,
                   },
                 ],
@@ -1051,7 +932,7 @@ export default function CreditDefault() {
                   legend: {
                     display: true,
                     labels: {
-                      color: C.muted,
+                      color: ConstColor.muted,
                       font: { family: "'Space Mono'", size: 10 },
                     },
                   },
@@ -1175,7 +1056,11 @@ export default function CreditDefault() {
                     {
                       label: 'After',
                       data: [0.522, 0.461, 0.46],
-                      backgroundColor: [C.sky, C.amber, C.indigo],
+                      backgroundColor: [
+                        ConstColor.sky,
+                        ConstColor.amber,
+                        ConstColor.indigo,
+                      ],
                       borderRadius: 4,
                     },
                   ],
@@ -1186,7 +1071,7 @@ export default function CreditDefault() {
                     legend: {
                       display: true,
                       labels: {
-                        color: C.muted,
+                        color: ConstColor.muted,
                         font: { family: "'Space Mono'", size: 10 },
                       },
                     },
@@ -1356,7 +1241,7 @@ export default function CreditDefault() {
                       backgroundColor: [
                         0.2093, 0.0196, 0.0178, 0.0106, 0.0104, 0.0098, 0.0087,
                         0.0079, 0.0064, -0.0006,
-                      ].map((v) => (v >= 0 ? C.sky : C.rose)),
+                      ].map((v) => (v >= 0 ? ConstColor.sky : ConstColor.rose)),
                       borderRadius: 3,
                     },
                   ],
@@ -1439,19 +1324,19 @@ export default function CreditDefault() {
                 label="Validation F1 (CV mean)"
                 value={0.5295}
                 max={0.65}
-                color={C.sky}
+                color={ConstColor.sky}
               />
               <ScoreBar
                 label="Test F1"
                 value={0.5223}
                 max={0.65}
-                color={C.indigo}
+                color={ConstColor.indigo}
               />
               <ScoreBar
                 label="Gap (Val − Test)"
                 value={0.0072}
                 max={0.065}
-                color={C.emerald}
+                color={ConstColor.emerald}
               />
             </div>
             <Callout $tone="success" style={{ marginTop: '1rem' }}>
