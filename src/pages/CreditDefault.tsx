@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,50 +10,31 @@ import {
   PointElement,
   RadialLinearScale,
 } from 'chart.js';
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { defaultByS, imbalance, multicol } from '../images/credit';
 import {
   GlobalStyle,
   Page,
-  skyAccent,
   SiteHeader,
-  Eyebrow,
   Logotype,
   Subtitle,
-  LiveBadge,
-  PulseDot,
   Card,
   CardLabel,
-  StatsRow,
-  StatCard,
-  StatVal,
-  StatLabel,
   Section,
   SubItem,
   SubNum,
   SubTitle,
   Prose,
   InlineCode,
-  Chips,
-  SkyChip,
-  IndigoChip,
-  RoseChip,
-  AmberChip,
-  EmeraldChip,
-  MutedChip,
   ToolsRow,
   ToolBadge,
   CodeBlock,
   ChartWrap,
-  CanvasWrap,
   TwoColGrid,
   ThreeColGrid,
   MetricRow,
   MetricKey,
   MetricVal,
-  AccentCard,
-  AccentCardName,
-  AccentCardSub,
   BestBadge,
   Callout,
   CalloutTitle,
@@ -72,9 +53,6 @@ import {
   InsightIcon,
   InsightTitle,
   InsightBody,
-  Footer,
-  FooterText,
-  chartDefaults,
   ConstColor,
 } from '../components/CommonComponents';
 
@@ -527,8 +505,8 @@ export default function CreditDefault() {
           </Logotype>
           <Subtitle>
             End-to-end ML pipeline predicting credit card default risk — from
-            EDA and preprocessing to model comparison, Bayesian hyperparameter
-            tuning, and SHAP interpretation.
+            EDA and preprocessing to model comparison, and Bayesian
+            hyperparameter tuning.
           </Subtitle>
         </SiteHeader>
         {/* ── OVERVIEW ── */}
@@ -549,13 +527,6 @@ export default function CreditDefault() {
             avoided as it would be misleadingly high even if the model always
             predicted "no default."
           </Prose>
-          <MetaChips style={{ marginTop: '1.25rem' }}>
-            <Chip $variant="sky">Classification</Chip>
-            <Chip $variant="rose">Class Imbalance · 22%</Chip>
-            <Chip $variant="indigo">Primary: F1-Score</Chip>
-            <Chip $variant="amber">Secondary: ROC-AUC</Chip>
-            <Chip>30,000 examples · 24 features</Chip>
-          </MetaChips>
         </Card>
         {/* ── DATASET ── */}
         <Section num="01" title="Dataset Overview" />
@@ -702,8 +673,6 @@ export default function CreditDefault() {
               'scikit-learn',
               'XGBoost',
               'scikit-optimize',
-              'SHAP',
-              'Altair',
               'pandas',
               'NumPy',
               'scipy',

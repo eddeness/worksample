@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { CodeBlock } from '@atlaskit/code';
 import {
   surveyExploration,
@@ -27,10 +27,6 @@ import {
   Subtitle,
   Card,
   CardLabel,
-  StatsRow,
-  StatCard,
-  StatVal,
-  StatLabel,
   Section,
   SubItem,
   SubNum,
@@ -341,7 +337,7 @@ export default function Survey() {
         </SiteHeader>
 
         {/* ── STATS ── */}
-        <StatsRow>
+        {/* <StatsRow>
           <StatCard>
             <StatVal>23,589</StatVal>
             <StatLabel>Total Respondents</StatLabel>
@@ -358,7 +354,7 @@ export default function Survey() {
             <StatVal>80%+</StatVal>
             <StatLabel>Male Respondents</StatLabel>
           </StatCard>
-        </StatsRow>
+        </StatsRow> */}
 
         {/* ── OVERVIEW ── */}
         <Card>
