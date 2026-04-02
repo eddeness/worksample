@@ -405,7 +405,7 @@ const PROJECTS_TL: ProjectData[] = [
     title: 'Data Preparation & Transfer Learning',
     desc: 'End-to-end pipeline for custom data collection, annotation, and training optimized YOLO models for mobile via transfer learning.',
     stack: 'Python · Ultralytics',
-    href: 'https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571"',
+    href: 'https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571',
     delay: 0.08,
   },
   {
