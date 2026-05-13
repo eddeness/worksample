@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/worksample/static/css/main.1400c900.css",
-    "main.js": "/worksample/static/js/main.608ef91f.js",
+    "main.js": "/worksample/static/js/main.805c49f1.js",
     "@atlaskit-internal_refractor-import.js": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js",
     "static/js/453.b3a8b54a.chunk.js": "/worksample/static/js/453.b3a8b54a.chunk.js",
     "static/media/multicol.png": "/worksample/static/media/multicol.17075d956c9525388bd5.png",
@@ -18,6 +18,8 @@
     "static/media/unigram.png": "/worksample/static/media/unigram.c05da279e572a7466067.png",
     "static/media/transfer_tuned_predict.png": "/worksample/static/media/transfer_tuned_predict.22491dc44d9d08cbe28a.png",
     "static/media/defaultByS.png": "/worksample/static/media/defaultByS.57cffbff0f3f55458efb.png",
+    "static/media/thumbnail_RAG1.png": "/worksample/static/media/thumbnail_RAG1.1b9b944f743b719865c7.png",
+    "static/media/thumbnail_RAG2.png": "/worksample/static/media/thumbnail_RAG2.eac7a3e5583f8251d6b5.png",
     "static/media/transfer_raw_predict.png": "/worksample/static/media/transfer_raw_predict.ef800ba452c57a70c562.png",
     "static/media/transfer_raw_show.png": "/worksample/static/media/transfer_raw_show.b5d91698acd5a493752b.png",
     "static/media/carCapture.jpg": "/worksample/static/media/carCapture.1e5a3cfb279737eec024.jpg",
@@ -39,6 +41,7 @@
     "static/media/surveyExploration.png": "/worksample/static/media/surveyExploration.f7b5055e4da12c086aea.png",
     "static/media/twitData.png": "/worksample/static/media/twitData.a053ccff598aa7a62352.png",
     "static/media/mlservicePref.png": "/worksample/static/media/mlservicePref.b927d7795ff408f2d1dc.png",
+    "static/media/thumbnail_RAG3.png": "/worksample/static/media/thumbnail_RAG3.f3ee8a2adb406ca14fe3.png",
     "static/media/bikeRank.png": "/worksample/static/media/bikeRank.e36ec52eb88b9789d3ef.png",
     "static/media/supervank4.png": "/worksample/static/media/supervank4.837b12660498a590bb14.png",
     "static/media/rdbPref.png": "/worksample/static/media/rdbPref.476754ce19868bb51c56.png",
@@ -67,12 +70,12 @@
     "static/media/scanToDoc1.jpg": "/worksample/static/media/scanToDoc1.bd97549de74f87d76fa1.jpg",
     "index.html": "/worksample/index.html",
     "main.1400c900.css.map": "/worksample/static/css/main.1400c900.css.map",
-    "main.608ef91f.js.map": "/worksample/static/js/main.608ef91f.js.map",
+    "main.805c49f1.js.map": "/worksample/static/js/main.805c49f1.js.map",
     "@atlaskit-internal_refractor-import.8321ec81.chunk.js.map": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js.map",
     "453.b3a8b54a.chunk.js.map": "/worksample/static/js/453.b3a8b54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1400c900.css",
-    "static/js/main.608ef91f.js"
+    "static/js/main.805c49f1.js"
   ]
 }
