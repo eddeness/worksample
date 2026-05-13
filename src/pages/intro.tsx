@@ -484,7 +484,7 @@ const Intro: React.FC = () => {
                   Master of Data Science, University of British Columbia,
                   Vancouver, Canada
                 </EducationContent>
-                <EducationContent>GPA: 3.86/4.0</EducationContent>
+                <EducationContent>GPA: 3.92/4.0</EducationContent>
               </div>
             </EducationWrapper>
           </SectionContentWrapper>

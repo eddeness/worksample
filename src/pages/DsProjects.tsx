@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { transfer1, transfer2 } from '../images/coreml';
 import { cowLabelled } from '../images/transferlearning';
+import { RAG1, RAG2, RAG3 } from '../images/rag';
 import { byMajor } from '../images/survey';
 import { defaultByS } from '../images/credit';
 
@@ -130,7 +131,7 @@ const IntroPills = styled.div`
   gap: 0.5rem;
   margin-top: 2rem;
 `;
-
+ 
 interface PillProps {
   $accent?: boolean;
 }
@@ -421,6 +422,54 @@ const PROJECTS_TL: ProjectData[] = [
   },
 ];
 
+const PROJECTS_RAG: ProjectData[] = [
+  {
+    index: '01',
+    img: RAG1,
+    placeholder: '🔍',
+    tags: [
+      { label: 'RAG', variant: 'blue' },
+      { label: 'LLM', variant: 'red' },
+      { label: 'Vector DB' },
+    ],
+    title: 'RAG implementatino Part1',
+    desc: 'End-to-end Retrieval-Augmented Generation pipeline.',
+    stack: 'Python · LLM',
+    href: 'https://medium.com/@eden.parkdev/building-a-revolut-customer-support-bot-part-1-why-rag-3fa40dd39e67',
+    delay: 0.08,
+  },
+  {
+    index: '02',
+    img: RAG2,
+    placeholder: '🔍',
+    tags: [
+      { label: 'RAG', variant: 'blue' },
+      { label: 'LLM', variant: 'red' },
+      { label: 'Vector DB' },
+    ],
+    title: 'RAG implementatino Part2',
+    desc: 'End-to-end Retrieval-Augmented Generation pipeline.',
+    stack: 'Python · LLM',
+    href: 'https://medium.com/@eden.parkdev/building-a-revolut-customer-support-bot-part-2-bm25-vs-semantic-vs-hybrid-and-how-to-actually-d0061412088c',
+    delay: 0.08,
+  },
+  {
+    index: '03',
+    img: RAG3,
+    placeholder: '🔍',
+    tags: [
+      { label: 'RAG', variant: 'blue' },
+      { label: 'LLM', variant: 'red' },
+      { label: 'Vector DB' },
+    ],
+    title: 'RAG implementatino Part2',
+    desc: 'Github code for RAG',
+    stack: 'Python · LLM',
+    href: 'https://github.com/eddeness/RAG_revolut',
+    delay: 0.08,
+  }
+];
+
 const PROJECTS_DS: ProjectData[] = [
   {
     index: '01',
@@ -584,8 +633,13 @@ export default function Projects() {
           title="Transfer Learning & YOLO & CoreML"
           projects={PROJECTS_TL}
         />
-        <CategorySection
+        <CategorySection 
           num="02"
+          title="RAG & LLM applications"
+          projects={PROJECTS_RAG}
+        />
+        <CategorySection
+          num="03"
           title="Kaggle & Data Science"
           projects={PROJECTS_DS}
         />
