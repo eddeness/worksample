@@ -1,5 +1,5 @@
 import { Route } from 'react-router-dom';
-import './App.css';
+import { GlobalStyle } from './components/CommonComponents';
 import Survey from './pages/Survey';
 import Bike from './pages/bikeProject';
 import Intro from './pages/intro';
@@ -14,6 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <>
+      <GlobalStyle />
       <ScrollToTop />
       <Route exact path="/" component={Intro} />
       <Route exact path="/franchise" component={Franchise} />
