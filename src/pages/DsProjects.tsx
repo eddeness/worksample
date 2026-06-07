@@ -6,36 +6,49 @@ import { byMajor } from '../images/survey';
 import { defaultByS } from '../images/credit';
 
 // ─────────────────────────────────────────────
-// Global styles & tokens
+// Global styles & tokens — "Working paper":
+// warm paper, ink, hairlines, IBM Plex Sans + Mono
 // ─────────────────────────────────────────────
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
   :root {
-    --bg:      #f8f8f6;
-    --white:   #ffffff;
-    --ink:     #111110;
-    --muted:   #888880;
-    --dim:     #c4c4bc;
-    --border:  #e4e4e0;
-    --accent:  #1a6bff;
-    --accent2: #e8400c;
-    --green:   #1a9e5c;
-    --tag-bg:  #f0f0ec;
-    --sans:    'DM Sans', sans-serif;
-    --mono:    'DM Mono', monospace;
+    /* paper + ink (warm neutral, very low chroma) */
+    --paper:     #faf8f3;
+    --paper-2:   #f1ede4;
+    --paper-3:   #e8e3d8;
+    --ink:       #1a1813;
+    --ink-2:     #34302a;
+    --ink-mut:   #6b665a;
+    --ink-faint: #9c968a;
+    --rule:      #ddd7ca;
+    --rule-2:    #cbc4b4;
+
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    --maxw: 880px;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
+    margin: 0;
+    background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
-    min-height: 100vh;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 17px;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+
+  ::selection { background: var(--ink); color: var(--paper); }
 `;
 
 // ─────────────────────────────────────────────
@@ -46,530 +59,515 @@ const fadeUp = keyframes`
 `;
 
 // ─────────────────────────────────────────────
-// Layout
+// Shared atoms
 // ─────────────────────────────────────────────
-const Page = styled.div`
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem 8rem;
-
-  @media (max-width: 680px) {
-    padding: 0 1.25rem 5rem;
-  }
-`;
-
-// ─────────────────────────────────────────────
-// Intro
-// ─────────────────────────────────────────────
-const Intro = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 5rem;
-  align-items: center;
-  padding: 6rem 0 5.5rem;
-  border-bottom: 1px solid var(--border);
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-`;
-
-const IntroEyebrow = styled.div`
+const Tag = styled.span`
   font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-
-  &::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--accent);
-  }
-`;
-
-const IntroTitle = styled.h1`
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  color: var(--ink);
-  margin-bottom: 2rem;
-
-  em {
-    font-style: italic;
-    font-weight: 300;
-  }
-`;
-
-const IntroBody = styled.div`
-  font-size: 0.95rem;
-  line-height: 1.85;
-  color: #555550;
-  font-weight: 300;
-  max-width: 460px;
-
-  p + p {
-    margin-top: 1rem;
-  }
-
-  strong {
-    font-weight: 500;
-    color: var(--ink);
-  }
-`;
-
-const IntroPills = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 2rem;
-`;
- 
-interface PillProps {
-  $accent?: boolean;
-}
-
-const Pill = styled.span<PillProps>`
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 5px 13px;
+  color: var(--ink-mut);
+  border: 1px solid var(--rule-2);
   border-radius: 999px;
-  border: 1px solid
-    ${({ $accent }) => ($accent ? 'rgba(26,107,255,0.3)' : 'var(--border)')};
-  color: ${({ $accent }) => ($accent ? 'var(--accent)' : 'var(--muted)')};
-  background: ${({ $accent }) =>
-    $accent ? 'rgba(26,107,255,0.04)' : 'var(--white)'};
-`;
-
-// ─────────────────────────────────────────────
-// Section heading
-// ─────────────────────────────────────────────
-const SectionHeading = styled.div`
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  padding: 4rem 0 2rem;
-`;
-
-const SectionNum = styled.h2`
-  font-size: 0.65rem;
-  font-family: var(--mono);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
+  padding: 3px 9px;
   white-space: nowrap;
 `;
 
-const SectionTitle = styled.span`
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+const TagRow = styled.div`
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+`;
+
+const ReadLink = styled.a`
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
   color: var(--ink);
-`;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: gap 0.18s ease, opacity 0.18s ease;
 
-const SectionLine = styled.div`
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-`;
+  &:hover {
+    gap: 0.95em;
+    opacity: 0.65;
+  }
 
-// ─────────────────────────────────────────────
-// Project grid & card
-// ─────────────────────────────────────────────
-const ProjGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  .arr {
+    transition: transform 0.18s ease;
+  }
 
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
+  &:hover .arr {
+    transform: translateX(2px);
   }
 `;
 
-const ProjCard = styled.div<{ $delay: number }>`
-  background: var(--white);
+// ─────────────────────────────────────────────
+// Masthead
+// ─────────────────────────────────────────────
+const Masthead = styled.header`
+  border-bottom: 1px solid var(--ink);
+`;
+
+const MastheadRow = styled.div`
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px 32px;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mut);
+
+  b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+`;
+
+// ─────────────────────────────────────────────
+// Layout
+// ─────────────────────────────────────────────
+const Wrap = styled.main`
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 32px;
+`;
+
+// ─────────────────────────────────────────────
+// Title block
+// ─────────────────────────────────────────────
+const TitleBlock = styled.div`
+  padding: 84px 0 56px;
+
+  @media (max-width: 680px) {
+    padding: 60px 0 40px;
+  }
+`;
+
+const Eyebrow = styled.div`
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-mut);
+`;
+
+const Title = styled.h1`
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  margin: 22px 0 0;
+  white-space: pre-line;
+  text-wrap: balance;
+`;
+
+const Abstract = styled.div`
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 28px;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+`;
+
+const FieldLabel = styled.div`
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 5px;
+`;
+
+const AbstractBody = styled.div`
+  p {
+    margin: 0 0 16px;
+    max-width: 60ch;
+    color: var(--ink-2);
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const Keywords = styled.div`
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 28px;
+  align-items: start;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+`;
+
+const KwList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+// ─────────────────────────────────────────────
+// Section
+// ─────────────────────────────────────────────
+const Section = styled.section`
+  padding-top: 72px;
+`;
+
+const SecHead = styled.div`
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--ink);
+`;
+
+const SecNo = styled.span`
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-mut);
+  padding-top: 9px;
+  min-width: 34px;
+`;
+
+const SecTitle = styled.h2`
+  font-size: clamp(24px, 3.4vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+  margin: 0;
+`;
+
+const SecCaption = styled.p`
+  margin: 8px 0 0;
+  color: var(--ink-mut);
+  font-size: 15px;
+  max-width: 52ch;
+`;
+
+// ─────────────────────────────────────────────
+// Project entry
+// ─────────────────────────────────────────────
+const Entry = styled.article<{ $delay: number }>`
+  padding: 46px 0;
+  border-bottom: 1px solid var(--rule);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
   opacity: 0;
-  transform: translateY(8px);
-  animation: ${fadeUp} 0.4s ease forwards;
+  transform: translateY(10px);
+  animation: ${fadeUp} 0.45s ease forwards;
   animation-delay: ${({ $delay }) => $delay}s;
 `;
 
-// Image area
-const ProjImg = styled.div`
-  position: relative;
-  aspect-ratio: 4 / 3;
-  background: #ededea;
+const EntryTop = styled.div`
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  flex-wrap: wrap;
+`;
+
+const EntryRef = styled.span`
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mut);
+`;
+
+const EntryTitle = styled.h3`
+  font-size: clamp(22px, 2.8vw, 28px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  margin: 0;
+  flex: 1 1 auto;
+`;
+
+const EntryDesc = styled.p`
+  margin: 16px 0 0;
+  max-width: 64ch;
+  color: var(--ink-2);
+`;
+
+const EntryMeta = styled.div`
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+`;
+
+const Stack = styled.span`
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-mut);
+  letter-spacing: 0.01em;
+`;
+
+// ─────────────────────────────────────────────
+// Figure plate
+// ─────────────────────────────────────────────
+const Plate = styled.figure`
+  margin: 26px 0 0;
+`;
+
+const FigFrame = styled.div`
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
   overflow: hidden;
+  aspect-ratio: 16 / 8;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.5s cubic-bezier(0.25, 0, 0, 1);
-  }
-
-  ${ProjCard}:hover & img {
-    transform: scale(1.05);
   }
 `;
 
-const ProjImgPlaceholder = styled.div`
-  width: 100%;
-  height: 100%;
+
+// ─────────────────────────────────────────────
+// Colophon
+// ─────────────────────────────────────────────
+const Colophon = styled.footer`
+  margin-top: 90px;
+  border-top: 1px solid var(--ink);
+  padding: 26px 0 90px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.2rem;
-  opacity: 0.2;
-`;
-
-const ProjIndex = styled.span`
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.9);
-  background: rgba(0, 0, 0, 0.38);
-  backdrop-filter: blur(6px);
-  padding: 2px 7px;
-  border-radius: 2px;
-`;
-
-// Body
-const ProjBody = styled.div`
-  padding: 1.2rem 1.4rem 1.4rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-  border-top: 1px solid var(--border);
-`;
-
-const ProjTags = styled.div`
-  display: flex;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-`;
-
-type TagVariant = 'blue' | 'red' | 'green' | 'default';
-
-const Tag = styled.span<{ $variant?: TagVariant }>`
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  border-radius: 2px;
-
-  ${({ $variant }) => {
-    switch ($variant) {
-      case 'blue':
-        return `background: rgba(26,107,255,0.07); color: var(--accent);`;
-      case 'red':
-        return `background: rgba(232,64,12,0.07);  color: var(--accent2);`;
-      case 'green':
-        return `background: rgba(26,158,92,0.08);  color: var(--green);`;
-      default:
-        return `background: var(--tag-bg);          color: var(--muted);`;
-    }
-  }}
-`;
-
-const ProjTitle = styled.h3`
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.4;
-  color: var(--ink);
-`;
-
-const ProjDesc = styled.p`
-  font-size: 0.75rem;
-  line-height: 1.7;
-  color: var(--muted);
-  font-weight: 300;
-  flex: 1;
-`;
-
-const ProjFooter = styled.div`
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--border);
-  margin-top: auto;
-`;
-
-const ProjStack = styled.span`
   font-family: var(--mono);
-  font-size: 0.52rem;
-  color: var(--dim);
-  letter-spacing: 0.04em;
-`;
-
-const ArrowIcon = () => (
-  <svg
-    viewBox="0 0 10 10"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    style={{ width: 9, height: 9, transition: 'transform 0.15s' }}
-  >
-    <path d="M1 9L9 1M9 1H3M9 1V7" />
-  </svg>
-);
-
-const ProjLink = styled.a`
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.1em;
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 1px;
-  transition:
-    color 0.15s,
-    border-color 0.15s;
-
-  &:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-
-  &:hover svg {
-    transform: translate(2px, -2px);
-  }
+  color: var(--ink-faint);
+  flex-wrap: wrap;
+  gap: 12px;
 `;
+
+// ─────────────────────────────────────────────
+// Icons
+// ─────────────────────────────────────────────
+const Arrow = () => <span className="arr">→</span>;
 
 // ─────────────────────────────────────────────
 // Data
 // ─────────────────────────────────────────────
 interface ProjectData {
-  index: string;
-  img: string;
-  placeholder: string;
-  tags: { label: string; variant?: TagVariant }[];
+  ref: string;
+  tags: string[];
   title: string;
   desc: string;
   stack: string;
+  img: string;
   href: string;
-  delay: number;
 }
 
-const PROJECTS_TL: ProjectData[] = [
+interface SectionData {
+  no: string;
+  title: string;
+  caption: string;
+  projects: ProjectData[];
+}
+
+const SECTIONS: SectionData[] = [
   {
-    index: '1',
-    img: cowLabelled,
-    placeholder: '🧠',
-    tags: [
-      { label: 'YOLO', variant: 'blue' },
-      { label: 'Fine-tuning', variant: 'red' },
-      { label: 'Object Detection' },
+    no: '01',
+    title: 'Transfer Learning, YOLO & CoreML',
+    caption: 'Custom vision models trained, optimized, and shipped to the edge.',
+    projects: [
+      {
+        ref: '1.1',
+        tags: ['YOLO', 'Fine-Tuning', 'Object Detection'],
+        title: 'YOLO Fine-Tuning & Model Export',
+        desc: 'Fine-tuning YOLO11n on a custom cow-detection dataset (814 train / 90 val), then exporting the optimized weights for downstream deployment.',
+        stack: 'Python · Ultralytics',
+        img: cowLabelled,
+        href: '#/transferlearning',
+      },
+      {
+        ref: '1.2',
+        tags: ['YOLO', 'Transfer Learning'],
+        title: 'Data Preparation & Transfer Learning',
+        desc: 'End-to-end pipeline for custom data collection, annotation, and training of YOLO models optimized for mobile via transfer learning.',
+        stack: 'Python · Ultralytics',
+        img: transfer1,
+        href: 'https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571',
+      },
+      {
+        ref: '1.3',
+        tags: ['CoreML', 'Swift'],
+        title: 'Embedding a Model into an iOS App',
+        desc: 'Edge AI: real-time document detection, deploying custom models via CoreML for on-device inference on the Neural Engine.',
+        stack: 'Swift · Xcode · Vision',
+        img: transfer2,
+        href: 'https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-coreml-%EB%AA%A8%EB%8D%B8-%EB%84%A3%EA%B3%A0-%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A1%9C-%EC%9D%B8%EC%8B%9D%EC%8B%9C%ED%82%A4%EA%B8%B0-890ac737b476',
+      },
     ],
-    title: 'YOLO Fine-Tuning & Model Export',
-    desc: 'Fine-tuning YOLO11n on a custom cow detection dataset (814 train / 90 val)',
-    stack: 'Python · Ultralytics',
-    href: '#/transferlearning',
-    delay: 0.24,
   },
   {
-    index: '2',
-    img: transfer1,
-    placeholder: '📖',
-    tags: [
-      { label: 'YOLO', variant: 'blue' },
-      { label: 'Transfer Learning', variant: 'red' },
+    no: '02',
+    title: 'RAG & LLM Applications',
+    caption: 'Retrieval-augmented generation pipelines grounded in private data.',
+    projects: [
+      {
+        ref: '2.1',
+        tags: ['RAG', 'LLM', 'Vector DB'],
+        title: 'RAG Implementation — Part 1',
+        desc: 'End-to-end Retrieval-Augmented Generation pipeline: query routing, retrieval over private data, and grounded generation.',
+        stack: 'Python · LLM',
+        img: RAG1,
+        href: 'https://medium.com/@eden.parkdev/building-a-revolut-customer-support-bot-part-1-why-rag-3fa40dd39e67',
+      },
+      {
+        ref: '2.2',
+        tags: ['RAG', 'LLM', 'Vector DB'],
+        title: 'RAG Implementation — Part 2',
+        desc: 'Augmenting the prompt with retrieved context and generating a grounded final answer with the language model.',
+        stack: 'Python · LLM',
+        img: RAG2,
+        href: 'https://medium.com/@eden.parkdev/building-a-revolut-customer-support-bot-part-2-bm25-vs-semantic-vs-hybrid-and-how-to-actually-d0061412088c',
+      },
+      {
+        ref: '2.3',
+        tags: ['RAG', 'LLM', 'Vector DB'],
+        title: 'RAG Implementation — Source Code',
+        desc: 'Reference implementation: hybrid retrieval (BM25 + semantic) over Help-Center content, passing the top chunks as context to the model.',
+        stack: 'Python · LLM',
+        img: RAG3,
+        href: 'https://github.com/eddeness/RAG_revolut',
+      },
     ],
-    title: 'Data Preparation & Transfer Learning',
-    desc: 'End-to-end pipeline for custom data collection, annotation, and training optimized YOLO models for mobile via transfer learning.',
-    stack: 'Python · Ultralytics',
-    href: 'https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571',
-    delay: 0.08,
   },
   {
-    index: '3',
-    img: transfer2,
-    placeholder: '📱',
-    tags: [{ label: 'CoreML', variant: 'blue' }, { label: 'Swift' }],
-    title: 'Embedding a Model into an iOS App',
-    desc: 'Edge AI: Real-time document detection deploying custom models via CoreML for on-device inference on the Neural Engine.',
-    stack: 'Swift · Xcode · Vision',
-    href: 'https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-coreml-%EB%AA%A8%EB%8D%B8-%EB%84%A3%EA%B3%A0-%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A1%9C-%EC%9D%B8%EC%8B%9D%EC%8B%9C%ED%82%A4%EA%B8%B0-890ac737b476',
-    delay: 0.16,
+    no: '03',
+    title: 'Kaggle & Data Science',
+    caption:
+      'Statistical analysis and end-to-end modelling on real-world datasets.',
+    projects: [
+      {
+        ref: '3.1',
+        tags: ['Visualization', 'R', 'ggplot'],
+        title: 'DS Survey Analysis',
+        desc: 'Analysis and data visualization of programmers working in the field of data science — demographics, tooling, and majors.',
+        stack: 'R · ggplot',
+        img: byMajor,
+        href: '#/survey',
+      },
+      {
+        ref: '3.2',
+        tags: ['Data Science', 'Data Viz'],
+        title: 'Credit Default Prediction',
+        desc: 'End-to-end ML pipeline predicting credit-card default risk — from EDA and preprocessing to model comparison and Bayesian hyperparameter tuning.',
+        stack: 'Python · scikit-learn · pandas · numpy · scipy',
+        img: defaultByS,
+        href: '#/credit',
+      },
+    ],
   },
 ];
 
-const PROJECTS_RAG: ProjectData[] = [
-  {
-    index: '01',
-    img: RAG1,
-    placeholder: '🔍',
-    tags: [
-      { label: 'RAG', variant: 'blue' },
-      { label: 'LLM', variant: 'red' },
-      { label: 'Vector DB' },
-    ],
-    title: 'RAG implementation Part1',
-    desc: 'End-to-end Retrieval-Augmented Generation pipeline.',
-    stack: 'Python · LLM',
-    href: 'https://medium.com/@eden.parkdev/building-a-revolut-customer-support-bot-part-1-why-rag-3fa40dd39e67',
-    delay: 0.08,
-  },
-  {
-    index: '02',
-    img: RAG2,
-    placeholder: '🔍',
-    tags: [
-      { label: 'RAG', variant: 'blue' },
-      { label: 'LLM', variant: 'red' },
-      { label: 'Vector DB' },
-    ],
-    title: 'RAG implementation Part2',
-    desc: 'End-to-end Retrieval-Augmented Generation pipeline.',
-    stack: 'Python · LLM',
-    href: 'https://medium.com/@eden.parkdev/building-a-revolut-customer-support-bot-part-2-bm25-vs-semantic-vs-hybrid-and-how-to-actually-d0061412088c',
-    delay: 0.08,
-  },
-  {
-    index: '03',
-    img: RAG3,
-    placeholder: '🔍',
-    tags: [
-      { label: 'RAG', variant: 'blue' },
-      { label: 'LLM', variant: 'red' },
-      { label: 'Vector DB' },
-    ],
-    title: 'RAG implementation Code',
-    desc: 'Github code for RAG',
-    stack: 'Python · LLM',
-    href: 'https://github.com/eddeness/RAG_revolut',
-    delay: 0.08,
-  }
+const KEYWORDS = [
+  'Python',
+  'R',
+  'Swift',
+  'Machine Learning',
+  'Computer Vision',
+  'Data Viz',
+  'CoreML',
 ];
 
-const PROJECTS_DS: ProjectData[] = [
-  {
-    index: '01',
-    img: byMajor,
-    placeholder: '🌍',
-    tags: [
-      { label: 'Visualization', variant: 'green' },
-      { label: 'R' },
-      { label: 'ggplot' },
-    ],
-    title: 'DS Survey Analysis',
-    desc: 'Analysis & Data Visualization on Programmers in the Field of Data Science',
-    stack: 'R · ggplot',
-    href: '#/survey',
-    delay: 0.32,
-  },
-  {
-    index: '02',
-    img: defaultByS,
-    placeholder: '🗺️',
-    tags: [{ label: 'Data science', variant: 'green' }, { label: 'Data Viz' }],
-    title: 'Credit Default Prediction',
-    desc: 'End-to-end ML pipeline predicting credit card default risk — from EDA and preprocessing to model comparison, and Bayesian hyperparameter tuning.',
-    stack: 'Python · scikit-learn· pandas · numpy · scipy',
-    href: '#/credit',
-    delay: 0.4,
-  },
+const ABSTRACT = [
+  'This page showcases projects built and extended throughout the Master of Data Science programme — and beyond. Each project applies academic concepts to concrete problems: from training custom vision models and deploying them on-device with CoreML, to uncovering patterns in real-world datasets through data visualization.',
+  'The work spans the full pipeline — data collection, modelling, evaluation, and delivery — reflecting a commitment to end-to-end understanding rather than isolated theory.',
 ];
 
 // ─────────────────────────────────────────────
 // Sub-components
 // ─────────────────────────────────────────────
-function ProjectCard({ project }: { project: ProjectData }) {
-  const { index, img, placeholder, tags, title, desc, stack, href, delay } =
-    project;
+function ProjectEntry({
+  project,
+  delay,
+}: {
+  project: ProjectData;
+  delay: number;
+}) {
+  const { ref, tags, title, desc, stack, img, href } = project;
 
   return (
-    <ProjCard $delay={delay}>
-      <ProjImg>
-        <img
-          src={img}
-          alt={title}
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).style.display = 'none';
-            (e.currentTarget.nextElementSibling as HTMLElement).style.display =
-              'flex';
-          }}
-        />
-        <ProjImgPlaceholder style={{ display: 'none' }}>
-          {placeholder}
-        </ProjImgPlaceholder>
-        <ProjIndex>{index}</ProjIndex>
-      </ProjImg>
-
-      <ProjBody>
-        <ProjTags>
+    <Entry $delay={delay}>
+      <EntryTop>
+        <EntryRef>{ref}</EntryRef>
+        <EntryTitle>{title}</EntryTitle>
+        <TagRow>
           {tags.map((t) => (
-            <Tag key={t.label} $variant={t.variant}>
-              {t.label}
-            </Tag>
+            <Tag key={t}>{t}</Tag>
           ))}
-        </ProjTags>
-        <ProjTitle>{title}</ProjTitle>
-        <ProjDesc>{desc}</ProjDesc>
-        <ProjFooter>
-          <ProjStack>{stack}</ProjStack>
-          <ProjLink>
-            <a href={href}>
-              Read
-              <ArrowIcon />
-            </a>
-          </ProjLink>
-        </ProjFooter>
-      </ProjBody>
-    </ProjCard>
+        </TagRow>
+      </EntryTop>
+
+      <EntryDesc>{desc}</EntryDesc>
+
+      <EntryMeta>
+        <Stack>{stack}</Stack>
+        <ReadLink href={href}>
+          Read <Arrow />
+        </ReadLink>
+      </EntryMeta>
+
+      <Plate>
+        <FigFrame>
+          <img
+            src={img}
+            alt={title}
+            loading="lazy"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.opacity = '0';
+            }}
+          />
+        </FigFrame>
+      </Plate>
+    </Entry>
   );
 }
 
-function CategorySection({
-  num,
-  title,
-  projects,
-}: {
-  num: string;
-  title: string;
-  projects: ProjectData[];
-}) {
+function CategorySection({ section }: { section: SectionData }) {
+  const { no, title, caption, projects } = section;
+
   return (
-    <>
-      <SectionHeading>
-        <SectionNum>{num}</SectionNum>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionLine />
-      </SectionHeading>
-      <ProjGrid>
-        {projects.map((p) => (
-          <ProjectCard key={p.index} project={p} />
-        ))}
-      </ProjGrid>
-    </>
+    <Section>
+      <SecHead>
+        <SecNo>§ {no}</SecNo>
+        <div>
+          <SecTitle>{title}</SecTitle>
+          <SecCaption>{caption}</SecCaption>
+        </div>
+      </SecHead>
+      {projects.map((p, i) => (
+        <ProjectEntry key={p.ref} project={p} delay={0.08 + i * 0.08} />
+      ))}
+    </Section>
   );
 }
 
@@ -580,70 +578,36 @@ export default function Projects() {
   return (
     <>
       <GlobalStyle />
-      <Page>
-        {/* ── INTRO ── */}
-        <Intro>
-          <div>
-            <IntroEyebrow>Project Showcase</IntroEyebrow>
-            <IntroTitle>
-              Applied <em>research</em>
-              <br />
-              from MDS to
-              <br />
-              real-world.
-            </IntroTitle>
-            <IntroBody>
-              <p>
-                This page showcases projects built and extended throughout the{' '}
-                <strong>Master of Data Science</strong> programme — and beyond.
-                Each project applies academic concepts to concrete problems:
-                from training custom vision models and deploying them on-device
-                with <strong>CoreML</strong>, to uncovering patterns in
-                real-world datasets through <strong>data visualization</strong>.
-              </p>
-              <p>
-                The work spans the full pipeline — data collection, modelling,
-                evaluation, and delivery — reflecting a commitment to end-to-end
-                understanding rather than isolated theory.
-              </p>
-            </IntroBody>
-            <IntroPills>
-              {(['Python', 'R', 'Swift'] as const).map((t) => (
-                <Pill key={t} $accent>
-                  {t}
-                </Pill>
-              ))}
-              {(
-                [
-                  'Machine Learning',
-                  'Computer Vision',
-                  'Data Viz',
-                  'CoreML',
-                ] as const
-              ).map((t) => (
-                <Pill key={t}>{t}</Pill>
-              ))}
-            </IntroPills>
-          </div>
-        </Intro>
+      <Wrap>
+        {/* ── TITLE BLOCK ── */}
+        <TitleBlock>
+          <Eyebrow>Project Showcase</Eyebrow>
+          <Title>{'Applied research,\nfrom MDS to the real world.'}</Title>
 
-        {/* ── CATEGORIES ── */}
-        <CategorySection
-          num="01"
-          title="Transfer Learning & YOLO & CoreML"
-          projects={PROJECTS_TL}
-        />
-        <CategorySection 
-          num="02"
-          title="RAG & LLM applications"
-          projects={PROJECTS_RAG}
-        />
-        <CategorySection
-          num="03"
-          title="Kaggle & Data Science"
-          projects={PROJECTS_DS}
-        />
-      </Page>
+          <Abstract>
+            <FieldLabel>Abstract</FieldLabel>
+            <AbstractBody>
+              {ABSTRACT.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </AbstractBody>
+          </Abstract>
+
+          <Keywords>
+            <FieldLabel>Keywords</FieldLabel>
+            <KwList>
+              {KEYWORDS.map((k) => (
+                <Tag key={k}>{k}</Tag>
+              ))}
+            </KwList>
+          </Keywords>
+        </TitleBlock>
+
+        {/* ── SECTIONS ── */}
+        {SECTIONS.map((s) => (
+          <CategorySection key={s.no} section={s} />
+        ))}
+      </Wrap>
     </>
   );
 }

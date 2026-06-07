@@ -117,10 +117,6 @@ const Intro: React.FC = () => {
               Hello, I'm <IntroName>Seungmyun Park</IntroName>
             </IntroGreeting>
             <IntroTitle>Software engineer 😎</IntroTitle>
-            <IntroSubtitle>
-              Crafting intelligent apps with advanced analytics and AI
-              integration.
-            </IntroSubtitle>
           </IntroTextSection>
         </Container>
       </IntroSection>
@@ -135,21 +131,16 @@ const Intro: React.FC = () => {
               contribute to company growth.
             </p>
             <p>
+              💡 I thrive on solving complex challenges and am dedicated to
+              incorporating AI technologies into mobile ecosystems to create
+              more intelligent, user-centric applications.
+            </p>
+            <p>
               🦾 My current focus is on iOS development, and I also have
               expertise in backend programming using Python and PHP to handle
               end-to-end requirements as needed. Much of my work has guided by
               analyzing user behavior and optimizing features to inform
               strategic product decisions.
-            </p>
-            <p>
-              👩🏼‍💻 To deepen my expertise and apply these skills effectively, I am
-              currently pursuing a Master of Data Science at the University of
-              British Columbia.
-            </p>
-            <p>
-              💡 I thrive on solving complex challenges and am dedicated to
-              incorporating AI technologies into mobile ecosystems to create
-              more intelligent, user-centric applications.
             </p>
             <p>
               🛠 This website was developed from scratch using React,
@@ -329,62 +320,6 @@ const Intro: React.FC = () => {
               ios="https://apps.apple.com/gb/app/sticpay/id1274956968"
               android="https://play.google.com/store/apps/details?id=com.sticpay.app.sticpay"
             />
-          </SectionContentWrapper>
-
-          <SectionContentWrapper>
-            <SectionSemiTitle>Supervank Android application</SectionSemiTitle>
-            <SectionExplanation>
-              Stock market-linked reward platform with investment simulation
-            </SectionExplanation>
-            <TechStack>
-              Technologies: Java, MVC, Ad SDK (Meta, Unity, Google), Camera API,
-              Glide, ContentProvider
-            </TechStack>
-            <AppDescription>
-              - Pedometer Engineering: Developed an activity tracking system
-              using gyro sensors to provide detailed fitness analytics (steps,
-              distance, and calories).
-            </AppDescription>
-            <AppDescription>
-              - Investment Simulation: Created intuitive UI/UX for users to
-              track investment outcomes based on real-world stock market data.
-            </AppDescription>
-            <AppDescription>
-              - Optimized Media Handling: Engineered custom-built Camera and
-              Gallery modules to improve user experience beyond standard system
-              components.
-            </AppDescription>
-            <AppDescription style={{ color: '#dc3545' }}>
-              - Due to the company's policy, this app is currently down from the
-              play store
-            </AppDescription>
-
-            <ImageGallery>
-              <ProjectImage
-                src={supervank1}
-                width={150}
-                height={300}
-                alt="Supervank screenshot 1"
-              />
-              <ProjectImage
-                src={supervank2}
-                width={150}
-                height={300}
-                alt="Supervank screenshot 2"
-              />
-              <ProjectImage
-                src={supervank3}
-                width={150}
-                height={300}
-                alt="Supervank screenshot 3"
-              />
-              <ProjectImage
-                src={supervank4}
-                width={200}
-                height={300}
-                alt="Supervank screenshot 4"
-              />
-            </ImageGallery>
           </SectionContentWrapper>
         </Container>
       </WorkExperienceSection>
