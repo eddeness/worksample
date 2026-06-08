@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/worksample/static/css/main.91065157.css",
-    "main.js": "/worksample/static/js/main.f99acf73.js",
+    "main.js": "/worksample/static/js/main.f6e91f1b.js",
     "@atlaskit-internal_refractor-import.js": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js",
     "static/js/453.b3a8b54a.chunk.js": "/worksample/static/js/453.b3a8b54a.chunk.js",
     "static/media/scanningBooks.gif": "/worksample/static/media/scanningBooks.947e7806f3a6e1fc7e0d.gif",
@@ -67,12 +67,12 @@
     "static/media/sticpay2.jpg": "/worksample/static/media/sticpay2.4568b77aa0b0c5f12e5d.jpg",
     "index.html": "/worksample/index.html",
     "main.91065157.css.map": "/worksample/static/css/main.91065157.css.map",
-    "main.f99acf73.js.map": "/worksample/static/js/main.f99acf73.js.map",
+    "main.f6e91f1b.js.map": "/worksample/static/js/main.f6e91f1b.js.map",
     "@atlaskit-internal_refractor-import.8321ec81.chunk.js.map": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js.map",
     "453.b3a8b54a.chunk.js.map": "/worksample/static/js/453.b3a8b54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91065157.css",
-    "static/js/main.f99acf73.js"
+    "static/js/main.f6e91f1b.js"
   ]
 }
