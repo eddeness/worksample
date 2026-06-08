@@ -334,9 +334,15 @@ const Intro: React.FC = () => {
               Intelligent Document Digitization App
             </SectionExplanation>
             <TechStack>
-              Technologies: OpenCV (C++), Objective-C/C++, RxSwift, SnapKit,
+              Technologies: SwiftUI, XCode Cloud, OpenCV (C++), Objective-C/C++, RxSwift, SnapKit,
               PencilKit
             </TechStack>
+            <AppDescription>
+              - Leveraged Claude Code to refactor legacy Objective-C/C++ bridging code into clean, modular Swift wrappers, reducing technical debt
+            </AppDescription>
+            <AppDescription>
+              - Leveraged Claude Design to design and implement a unified UI system using SwiftUI and SnapKit, replacing legacy layouts
+            </AppDescription>
             <AppDescription>
               - Engineered core image processing features using OpenCV (C++) to
               implement real-time sharpening and brightness optimization.
