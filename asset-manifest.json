@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/worksample/static/css/main.91065157.css",
-    "main.js": "/worksample/static/js/main.f6e91f1b.js",
+    "main.js": "/worksample/static/js/main.bb497d89.js",
     "@atlaskit-internal_refractor-import.js": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js",
     "static/js/453.b3a8b54a.chunk.js": "/worksample/static/js/453.b3a8b54a.chunk.js",
     "static/media/scanningBooks.gif": "/worksample/static/media/scanningBooks.947e7806f3a6e1fc7e0d.gif",
+    "static/media/transfer2.gif": "/worksample/static/media/transfer2.dff23915557c2e2d8e57.gif",
     "static/media/shareBook.gif": "/worksample/static/media/shareBook.e7f906bfe29a17840be4.gif",
     "static/media/multicol.png": "/worksample/static/media/multicol.17075d956c9525388bd5.png",
     "static/media/carsOnWeb.jpg": "/worksample/static/media/carsOnWeb.8919377c8f9debe62560.jpg",
@@ -24,7 +25,6 @@
     "static/media/transfer_raw_predict.png": "/worksample/static/media/transfer_raw_predict.ef800ba452c57a70c562.png",
     "static/media/transfer_raw_show.png": "/worksample/static/media/transfer_raw_show.b5d91698acd5a493752b.png",
     "static/media/carCapture.jpg": "/worksample/static/media/carCapture.1e5a3cfb279737eec024.jpg",
-    "static/media/transfer2.gif": "/worksample/static/media/transfer2.90702a343bbb37cdf64d.gif",
     "static/media/workingHour.png": "/worksample/static/media/workingHour.9454cdfe656b53e32701.png",
     "static/media/adjustedWind.png": "/worksample/static/media/adjustedWind.4f7f88904df591be2c5c.png",
     "static/media/sentimentAnalysis.png": "/worksample/static/media/sentimentAnalysis.f2c84bedbfcabad83eb4.png",
@@ -67,12 +67,12 @@
     "static/media/sticpay2.jpg": "/worksample/static/media/sticpay2.4568b77aa0b0c5f12e5d.jpg",
     "index.html": "/worksample/index.html",
     "main.91065157.css.map": "/worksample/static/css/main.91065157.css.map",
-    "main.f6e91f1b.js.map": "/worksample/static/js/main.f6e91f1b.js.map",
+    "main.bb497d89.js.map": "/worksample/static/js/main.bb497d89.js.map",
     "@atlaskit-internal_refractor-import.8321ec81.chunk.js.map": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js.map",
     "453.b3a8b54a.chunk.js.map": "/worksample/static/js/453.b3a8b54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91065157.css",
-    "static/js/main.f6e91f1b.js"
+    "static/js/main.bb497d89.js"
   ]
 }
