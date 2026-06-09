@@ -399,7 +399,7 @@ const Intro: React.FC = () => {
                 imageWidth={320}
                 imageHeight={150}
                 description="End-to-end pipeline for custom data collection, annotation, and training optimized YOLO models for mobile via transfer learning."
-                link="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%AC%B8%EC%84%9C-%EC%9D%B8%EC%8B%9D-%EB%AA%A8%EB%8D%B8-coreml-%EA%B0%9C%EB%B0%9C%EA%B8%B0-81b20b5e8571"
+                link="https://medium.com/@eden.parkdev/developing-a-document-recognition-model-with-coreml-through-transfer-learning-95a2554cbf51"
               />
               <ProjectCardComponent
                 title="Embedding a model into an iOS app"
@@ -407,7 +407,7 @@ const Intro: React.FC = () => {
                 imageWidth={100}
                 imageHeight={145}
                 description="Edge AI: Real-time Document - Detection Deploying Custom Transfer Learning Models via CoreML for On-device Inference."
-                link="https://medium.com/@eden.parkdev/%EC%A0%84%EC%9D%B4-%ED%95%99%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-coreml-%EB%AA%A8%EB%8D%B8-%EB%84%A3%EA%B3%A0-%EC%B9%B4%EB%A9%94%EB%9D%BC%EB%A1%9C-%EC%9D%B8%EC%8B%9D%EC%8B%9C%ED%82%A4%EA%B8%B0-890ac737b476"
+                link="https://medium.com/@eden.parkdev/integrating-a-transfer-learning-based-coreml-model-for-real-time-camera-inference-39e8c470dd36?postPublishedType=repub"
               />
             </ProjectGrid>
           </SectionContentWrapper>
