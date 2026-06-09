@@ -422,7 +422,7 @@ const SECTIONS: SectionData[] = [
         desc: 'Edge AI: real-time document detection, deploying custom models via CoreML for on-device inference on the Neural Engine.',
         stack: 'Swift · Xcode · Vision',
         img: transfer2,
-        href: 'https://medium.com/@eden.parkdev/integrating-a-transfer-learning-based-coreml-model-for-real-time-camera-inference-39e8c470dd36?postPublishedType=repub',
+        href: 'https://medium.com/@eden.parkdev/integrating-a-transfer-learning-based-coreml-model-for-real-time-camera-inference-39e8c470dd36',
       },
     ],
   },

@@ -407,7 +407,7 @@ const Intro: React.FC = () => {
                 imageWidth={100}
                 imageHeight={145}
                 description="Edge AI: Real-time Document - Detection Deploying Custom Transfer Learning Models via CoreML for On-device Inference."
-                link="https://medium.com/@eden.parkdev/integrating-a-transfer-learning-based-coreml-model-for-real-time-camera-inference-39e8c470dd36?postPublishedType=repub"
+                link="https://medium.com/@eden.parkdev/integrating-a-transfer-learning-based-coreml-model-for-real-time-camera-inference-39e8c470dd36"
               />
             </ProjectGrid>
           </SectionContentWrapper>
