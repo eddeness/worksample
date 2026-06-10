@@ -334,7 +334,7 @@ const Intro: React.FC = () => {
               Intelligent Document Digitization App
             </SectionExplanation>
             <TechStack>
-              Technologies: SwiftUI, XCode Cloud, OpenCV (C++), Objective-C/C++, RxSwift, SnapKit,
+              Technologies: SwiftUI, Claude Code, Claude Design, OpenCV (C++), Objective-C/C++, RxSwift, SnapKit, PDFKit,
               PencilKit
             </TechStack>
             <AppDescription>
