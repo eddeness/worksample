@@ -6,7 +6,6 @@ import {
   IntroName,
   IntroGreeting,
   IntroTitle,
-  IntroSubtitle,
   AboutMeSection,
   SectionContentWrapper,
   SectionTitle,
@@ -53,6 +52,7 @@ import {
   supervank3,
   supervank4,
 } from '../images/supervank';
+import { vox1, vox2 } from '../images/vox';
 
 interface ProjectCardProps {
   title: string;
@@ -389,6 +389,49 @@ const Intro: React.FC = () => {
 
             <AppLinks ios="https://apps.apple.com/gb/app/scan-to-doc/id1542458261" />
           </SectionContentWrapper>
+
+          <SectionContentWrapper>
+            <SectionSemiTitle>VoxNoteAI</SectionSemiTitle>
+            <SectionExplanation>
+              On-Device Voice Transcription, Summarization & Translation App
+            </SectionExplanation>
+            <TechStack>
+              Technologies: SwiftUI, Claude Code, Claude Design, WhisperKit, MLX Swift, Apple Translation API, SwiftData, AVAudioEngine
+            </TechStack>
+            <AppDescription>
+              - Built a fully on-device voice AI app using WhisperKit (Whisper large-v3) for speech-to-text transcription with no data leaving the device
+            </AppDescription>
+            <AppDescription>
+              - Integrated WhisperKit, MLX (Qwen2.5), and Apple Translation API for a complete offline AI pipeline
+            </AppDescription>
+            <AppDescription>
+              - Engineered real-time transcription via AVAudioEngine with live streaming output
+            </AppDescription>
+            <AppDescription>
+              - Architected multiplatform SwiftUI app with @Observable MVVM and SwiftData
+            </AppDescription>
+            <AppDescription>
+              - Designed a hierarchical folder system with drag-and-drop organization and persistent transcript storage
+            </AppDescription>
+
+            <ImageGallery>
+              <ProjectImage
+                src={vox1}
+                width={400}
+                height={300}
+                alt="VoxNoteAI screenshot 1"
+              />
+              <ProjectImage
+                src={vox2}
+                width={400}
+                height={300}
+                alt="VoxNoteAI screenshot 2"
+              />
+            </ImageGallery>
+
+            <AppLinks macos="https://apps.apple.com/us/app/voxnoteai/id6772690463?mt=12" />
+          </SectionContentWrapper>
+
 
           <SectionContentWrapper>
             <SectionSemiTitle>CoreML & iOS</SectionSemiTitle>
