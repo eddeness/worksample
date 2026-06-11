@@ -1,14 +1,12 @@
 {
   "files": {
     "main.css": "/worksample/static/css/main.91065157.css",
-    "main.js": "/worksample/static/js/main.7b2fdc05.js",
+    "main.js": "/worksample/static/js/main.00714648.js",
     "@atlaskit-internal_refractor-import.js": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js",
     "static/js/453.b3a8b54a.chunk.js": "/worksample/static/js/453.b3a8b54a.chunk.js",
     "static/media/scanningBooks.gif": "/worksample/static/media/scanningBooks.947e7806f3a6e1fc7e0d.gif",
     "static/media/transfer2.gif": "/worksample/static/media/transfer2.dff23915557c2e2d8e57.gif",
-    "static/media/vox2.png": "/worksample/static/media/vox2.ea8befef2a9ad44888e8.png",
     "static/media/shareBook.gif": "/worksample/static/media/shareBook.e7f906bfe29a17840be4.gif",
-    "static/media/vox1.png": "/worksample/static/media/vox1.28163b8e8046797a93b3.png",
     "static/media/multicol.png": "/worksample/static/media/multicol.17075d956c9525388bd5.png",
     "static/media/carsOnWeb.jpg": "/worksample/static/media/carsOnWeb.8919377c8f9debe62560.jpg",
     "static/media/bigramBoth.png": "/worksample/static/media/bigramBoth.6ea090916bb62f3d5a0d.png",
@@ -69,12 +67,12 @@
     "static/media/sticpay2.jpg": "/worksample/static/media/sticpay2.4568b77aa0b0c5f12e5d.jpg",
     "index.html": "/worksample/index.html",
     "main.91065157.css.map": "/worksample/static/css/main.91065157.css.map",
-    "main.7b2fdc05.js.map": "/worksample/static/js/main.7b2fdc05.js.map",
+    "main.00714648.js.map": "/worksample/static/js/main.00714648.js.map",
     "@atlaskit-internal_refractor-import.8321ec81.chunk.js.map": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js.map",
     "453.b3a8b54a.chunk.js.map": "/worksample/static/js/453.b3a8b54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91065157.css",
-    "static/js/main.7b2fdc05.js"
+    "static/js/main.00714648.js"
   ]
 }
