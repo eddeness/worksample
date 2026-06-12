@@ -390,7 +390,7 @@ const Intro: React.FC = () => {
             <AppLinks ios="https://apps.apple.com/gb/app/scan-to-doc/id1542458261" />
           </SectionContentWrapper>
 
-          {/* <SectionContentWrapper>
+          <SectionContentWrapper>
             <SectionSemiTitle>VoxNoteAI</SectionSemiTitle>
             <SectionExplanation>
               On-Device Voice Transcription, Summarization & Translation App
@@ -430,7 +430,7 @@ const Intro: React.FC = () => {
             </ImageGallery>
 
             <AppLinks macos="https://apps.apple.com/us/app/voxnoteai/id6772690463?mt=12" />
-          </SectionContentWrapper> */}
+          </SectionContentWrapper>
 
 
           <SectionContentWrapper>
