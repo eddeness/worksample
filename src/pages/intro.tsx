@@ -32,12 +32,7 @@ import {
 } from './Intro.styles';
 
 import { transfer1, transfer2 } from '../images/coreml';
-import {
-  scanToDoc1,
-  scanToDoc2,
-  scanningBooks,
-  shareBook,
-} from '../images/scantodoc';
+import { scanolio_preview, scanolio1, scanolio2, scanolio3} from '../images/scanolio';
 import {
   carsOnWeb,
   carCapture,
@@ -126,7 +121,7 @@ const Intro: React.FC = () => {
           <SectionContentWrapper>
             <SectionTitle>About Me</SectionTitle>
             <p>
-              💻 I am a software engineer with 6+ years of industry experience
+              💻 I am a software engineer with 7+ years of industry experience
               and a proven track record of delivering data-driven features that
               contribute to company growth.
             </p>
@@ -321,6 +316,62 @@ const Intro: React.FC = () => {
               android="https://play.google.com/store/apps/details?id=com.sticpay.app.sticpay"
             />
           </SectionContentWrapper>
+
+          <SectionContentWrapper>
+            <SectionSemiTitle>Supervank Android application</SectionSemiTitle>
+            <SectionExplanation>
+              Stock market-linked reward platform with investment simulation
+            </SectionExplanation>
+            <TechStack>
+              Technologies: Java, MVC, Ad SDK (Meta, Unity, Google), Camera API,
+              Glide, ContentProvider
+            </TechStack>
+            <AppDescription>
+              - Pedometer Engineering: Developed an activity tracking system
+              using gyro sensors to provide detailed fitness analytics (steps,
+              distance, and calories).
+            </AppDescription>
+            <AppDescription>
+              - Investment Simulation: Created intuitive UI/UX for users to
+              track investment outcomes based on real-world stock market data.
+            </AppDescription>
+            <AppDescription>
+              - Optimized Media Handling: Engineered custom-built Camera and
+              Gallery modules to improve user experience beyond standard system
+              components.
+            </AppDescription>
+            <AppDescription style={{ color: '#dc3545' }}>
+              - Due to the company's policy, this app is currently down from the
+              play store
+            </AppDescription>
+
+            <ImageGallery>
+              <ProjectImage
+                src={supervank1}
+                width={150}
+                height={300}
+                alt="Supervank screenshot 1"
+              />
+              <ProjectImage
+                src={supervank2}
+                width={150}
+                height={300}
+                alt="Supervank screenshot 2"
+              />
+              <ProjectImage
+                src={supervank3}
+                width={150}
+                height={300}
+                alt="Supervank screenshot 3"
+              />
+              <ProjectImage
+                src={supervank4}
+                width={200}
+                height={300}
+                alt="Supervank screenshot 4"
+              />
+            </ImageGallery>
+          </SectionContentWrapper>
         </Container>
       </WorkExperienceSection>
 
@@ -329,65 +380,71 @@ const Intro: React.FC = () => {
           <SectionTitle>Personal Projects</SectionTitle>
 
           <SectionContentWrapper>
-            <SectionSemiTitle>Scan To Doc</SectionSemiTitle>
+            <SectionSemiTitle>Scanolio</SectionSemiTitle>
             <SectionExplanation>
-              Intelligent Document Digitization App
+              Document Scanner with On-Device ML Corner Detection
             </SectionExplanation>
             <TechStack>
-              Technologies: SwiftUI, Claude Code, Claude Design, OpenCV (C++), Objective-C/C++, RxSwift, SnapKit, PDFKit,
-              PencilKit
+              Technologies: Swift, UIKit, SnapKit, RxSwift, CoreML, Kotlin,
+              Jetpack Compose, CameraX, TensorFlow Lite, OpenCV, Firebase
+              Analytics, Crashlytics, Claude Code
             </TechStack>
             <AppDescription>
-              - Leveraged Claude Code to refactor legacy Objective-C/C++ bridging code into clean, modular Swift wrappers, reducing technical debt
+              - Built a custom document corner detection pipeline: YOLO
+              segmentation model trained via transfer learning, deployed with
+              CoreML on iOS and TensorFlow Lite on Android, with OpenCV
+              post-processing for corner extraction and perspective correction.
             </AppDescription>
             <AppDescription>
-              - Leveraged Claude Design to design and implement a unified UI system using SwiftUI and SnapKit, replacing legacy layouts
+              - Shipped the iOS app first (UIKit, SnapKit, RxSwift), then ported
+              it to Android with Jetpack Compose and CameraX, reusing the same
+              detection model and OpenCV logic.
             </AppDescription>
             <AppDescription>
-              - Engineered core image processing features using OpenCV (C++) to
-              implement real-time sharpening and brightness optimization.
+              - Used Claude Code for agentic development of the Android port,
+              including build verification on the emulator and signed release
+              builds.
             </AppDescription>
             <AppDescription>
-              - Implemented Vision-based document recognition to automate
-              precise boundary detection and perspective correction.
+              - Integrated Firebase Analytics and Crashlytics with GDPR-based
+              consent gating for EU users.
             </AppDescription>
             <AppDescription>
-              - Architected a robust document management system using
-              directory-based file structures and PencilKit integration.
-            </AppDescription>
-            <AppDescription>
-              - Developed data sharing workflows using Share Extensions and App
-              Groups for cross-platform utility.
+              - Released on both the App Store and Google Play within about a
+              month, with store metadata localized into 8 languages.
             </AppDescription>
 
             <ImageGallery>
               <ProjectImage
-                src={scanToDoc1}
+                src={scanolio_preview}
                 width={150}
                 height={300}
-                alt="Scan To Doc screenshot 1"
+                alt="Scanolio preview"
               />
               <ProjectImage
-                src={scanToDoc2}
+                src={scanolio1}
                 width={150}
                 height={300}
-                alt="Scan To Doc screenshot 2"
+                alt="Scanolio screenshot 1"
               />
               <ProjectImage
-                src={scanningBooks}
+                src={scanolio2}
                 width={150}
                 height={300}
-                alt="Scanning books"
+                alt="Scanolio screenshot 2"
               />
               <ProjectImage
-                src={shareBook}
-                width={200}
+                src={scanolio3}
+                width={150}
                 height={300}
-                alt="Share book"
+                alt="Scanolio screenshot 3"
               />
             </ImageGallery>
 
-            <AppLinks ios="https://apps.apple.com/gb/app/scan-to-doc/id1542458261" />
+            <AppLinks
+              ios="https://apps.apple.com/us/app/scanolio-scan-pdf/id6806903517"
+              android="https://play.google.com/store/apps/details?id=com.seungpark.scanolio"
+            />
           </SectionContentWrapper>
 
           <SectionContentWrapper>
