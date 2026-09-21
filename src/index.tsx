@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
+import { detectLang } from "./i18n/translations";
+
+// Reflect the detected language on <html> for accessibility and SEO.
+document.documentElement.lang = detectLang();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
