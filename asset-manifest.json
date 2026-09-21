@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/worksample/static/css/main.91065157.css",
-    "main.js": "/worksample/static/js/main.ae07ef12.js",
+    "main.js": "/worksample/static/js/main.888a7756.js",
     "@atlaskit-internal_refractor-import.js": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js",
     "static/js/453.b3a8b54a.chunk.js": "/worksample/static/js/453.b3a8b54a.chunk.js",
     "static/media/transfer2.gif": "/worksample/static/media/transfer2.dff23915557c2e2d8e57.gif",
@@ -73,12 +73,12 @@
     "static/media/supervank3.png": "/worksample/static/media/supervank3.da89bc2e987496168f3c.png",
     "index.html": "/worksample/index.html",
     "main.91065157.css.map": "/worksample/static/css/main.91065157.css.map",
-    "main.ae07ef12.js.map": "/worksample/static/js/main.ae07ef12.js.map",
+    "main.888a7756.js.map": "/worksample/static/js/main.888a7756.js.map",
     "@atlaskit-internal_refractor-import.8321ec81.chunk.js.map": "/worksample/static/js/@atlaskit-internal_refractor-import.8321ec81.chunk.js.map",
     "453.b3a8b54a.chunk.js.map": "/worksample/static/js/453.b3a8b54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91065157.css",
-    "static/js/main.ae07ef12.js"
+    "static/js/main.888a7756.js"
   ]
 }
